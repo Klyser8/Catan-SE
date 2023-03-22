@@ -1,22 +1,22 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerController : MonoBehaviour
+namespace Player
 {
-    
-    public int victoryPoints = 0;
-    
-    
-    // Start is called before the first frame update
-    void Start()
+    public class PlayerController : MonoBehaviour
     {
-        
-    }
+    
+        public int victoryPoints = 0;
 
-    // Update is called once per frame
-    void Update()
-    {
+        // Start is called before the first frame update
+        void Start()
+        {
+            gameObject.AddComponent<ResourceHandler>();
+        }
+
+        // Update is called once per frame
+        void Update()
+        {
         
+        }
     }
 }
