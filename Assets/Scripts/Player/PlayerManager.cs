@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Player;
 using UnityEngine;
 
+[DefaultExecutionOrder(-1)]
 public class PlayerManager : MonoBehaviour
 {
 
