@@ -3,7 +3,23 @@ guid: 5833e76603af4e74ebad8824e26b25f9
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - forestTile: {fileID: 8122194513424722044, guid: 1475d81350c704f44a69ef49fc7b9b1d, type: 3}
+  - hayTile: {fileID: 9019414067868500889, guid: b98b8fdb310b6dc4ab5793bb1753e0b6, type: 3}
+  - fieldTile: {fileID: 2310651508472228299, guid: c16a412e6d98f3241b55633bf027ee25, type: 3}
+  - clayTile: {fileID: 5407126592580760070, guid: 00123629298c8664f897a0b70b91d7aa, type: 3}
+  - oreTile: {fileID: 1661031422001303004, guid: f58a3c6b092f64745a3a23ce023428ca, type: 3}
+  - desertTile: {fileID: 40027713803114718, guid: 2f0563874f03e9e41a4767234cc9c727, type: 3}
+  - two: {fileID: 1814257246254211055, guid: e2331d94610e220439ec9bd82a646038, type: 3}
+  - three: {fileID: 316488865780653404, guid: 6b688ddb5eaffb443adb868c89762754, type: 3}
+  - four: {fileID: 2494489043395528416, guid: eed3e55368b471546b551d96b842a18b, type: 3}
+  - five: {fileID: 1179147596473290131, guid: 8459905a3c07684459327ecaeee55dce, type: 3}
+  - six: {fileID: 5171420762909714787, guid: af90815240137dd4f9539f071ee01064, type: 3}
+  - eight: {fileID: 8252274562120798243, guid: def82dfdc5572384fbec306f741d185a, type: 3}
+  - nine: {fileID: 8678348712145294813, guid: 5b7b4dbd219d6c041968a9a735bb1f24, type: 3}
+  - ten: {fileID: 4605336652185756609, guid: 7ecb780cf9480684da7e8dc58dcb7b48, type: 3}
+  - eleven: {fileID: 7697065928949435733, guid: 8b49c4ecdacfcb6498bf722835cf8ead, type: 3}
+  - twelve: {fileID: 1943721384128768282, guid: e84462f48d4d63d4a99cc2db6dd546d3, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
