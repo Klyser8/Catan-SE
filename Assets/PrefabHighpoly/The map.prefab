@@ -1437,7 +1437,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3701199451844237929}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -15, y: -0.7, z: -15}
+  m_LocalPosition: {x: -12, y: -0.56, z: -12}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1521,7 +1521,7 @@ Transform:
   - {fileID: 5332685810265424313}
   - {fileID: 2860206662056844328}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3750508610387625270
 GameObject:
@@ -2025,6 +2025,16 @@ MonoBehaviour:
   clayTile: {fileID: 5407126592580760070, guid: 00123629298c8664f897a0b70b91d7aa, type: 3}
   oreTile: {fileID: 1661031422001303004, guid: f58a3c6b092f64745a3a23ce023428ca, type: 3}
   desertTile: {fileID: 40027713803114718, guid: 2f0563874f03e9e41a4767234cc9c727, type: 3}
+  two: {fileID: 0}
+  three: {fileID: 0}
+  four: {fileID: 0}
+  five: {fileID: 0}
+  six: {fileID: 0}
+  eight: {fileID: 0}
+  nine: {fileID: 0}
+  ten: {fileID: 0}
+  eleven: {fileID: 0}
+  twelve: {fileID: 0}
 --- !u!1 &4961088748747059605
 GameObject:
   m_ObjectHideFlags: 0

@@ -34,9 +34,9 @@ public class BuildingPoint : MonoBehaviour
         
     }
 
-    // private void OnDrawGizmos() {
-    //     Gizmos.DrawSphere(buildingCheck.position, buildingCheckDistance);
-    // }
+    private void OnDrawGizmos() {
+        Gizmos.DrawSphere(buildingCheck.position, buildingCheckDistance);
+    }
 
     void PlayPartical() {
         _markerEffect.Play();

@@ -98,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildingCheck: {fileID: 9020755870057148689}
-  buildingCheckDistance: 0.89
+  buildingCheckDistance: 0.6
   buildingMask:
     serializedVersion: 2
     m_Bits: 8
