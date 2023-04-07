@@ -123,7 +123,7 @@ public class BoardGenerator : MonoBehaviour
 
     void PopulateNumbers()
     {
-        Debug.Log("Desert Position: " + desertNoNumber);
+        // Debug.Log("Desert Position: " + desertNoNumber);
         Dictionary<GameObject, int> numbers = new Dictionary<GameObject, int>
         {
             { two, 1 },
@@ -145,7 +145,7 @@ public class BoardGenerator : MonoBehaviour
             {
                 var pos = (Vector3)_numPositions[Random.Range(0, _numPositions.Count)];
                 
-                Debug.Log(numType + " " + pos);
+                // Debug.Log(numType + " " + pos);
                 if(pos == desertNoNumber){
                     _numPositions.Remove(pos);
                     pos = (Vector3)_numPositions[Random.Range(0, _numPositions.Count)];

@@ -7,40 +7,136 @@ using UnityEngine;
 [DefaultExecutionOrder(0)]
 public class GameManager : MonoBehaviour
 {
-    
-    public List<PlayerController> players;
-    private int _currentPlayer = 1;
+
+    private PlayerManager _playerManager;
     private TurnState _turnState = TurnState.GameStart;
-    
+    private int _lastRoll = 0;
+    private PlayerController _currentPlayer;
+
     private void Start()
     {
-        players = new List<PlayerController>(FindObjectsOfType<PlayerController>());
-        Debug.Log("Number of players found: " + players);
+        _playerManager = FindObjectOfType<PlayerManager>();
+        Debug.Log("Number of players found: " + _playerManager.playerCount);
     }
+
     private void Update()
+{
+    switch (_turnState)
     {
-        var playerController = players[_currentPlayer];
+        case TurnState.GameStart:
+            Debug.Log("Game start");
+            SwitchState(TurnState.WaitingForRoll);
+            _currentPlayer = _playerManager.GetCurrentPlayer();
+            break;
+        
+        case TurnState.WaitingForRoll:
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                SwitchState(TurnState.Rolling);
+            }
+            break;
+        
+        case TurnState.Rolling:
+            _lastRoll = RollDice();
+            Debug.Log(_currentPlayer + " rolled a " + _lastRoll);
+            if (_lastRoll != 7)
+                SwitchState(TurnState.HarvestingResources);
+            else
+                SwitchState(TurnState.MovingRobber);
+            break;
+        
+        case TurnState.HarvestingResources:
+            Debug.Log("Harvesting resources");
+            //TODO: Harvest resources based on the last roll
+            SwitchState(TurnState.WaitingForAction);
+            break;
+        
+        case TurnState.MovingRobber:
+            Debug.Log(_currentPlayer + " is moving the robber");
+            //TODO: Move the robber and steal resources from a player
+            SwitchState(TurnState.WaitingForAction);
+            break;
+        
+        case TurnState.WaitingForAction:
+            HandleActionInput();
+            break;
+        
+        case TurnState.Building:
+            Debug.Log(_currentPlayer + " is building");
+            SwitchState(TurnState.WaitingForAction);
+            break;
+        
+        case TurnState.Trading:
+            Debug.Log(_currentPlayer + " is trading");
+            SwitchState(TurnState.WaitingForAction);
+            break;
+        
+        case TurnState.BuyingDevelopmentCard:
+            Debug.Log(_currentPlayer + " is buying a development card");
+            SwitchState(TurnState.WaitingForAction);
+            break;
+        
+        case TurnState.PlayingDevelopmentCard:
+            Debug.Log(_currentPlayer + " is playing a development card");
+            SwitchState(TurnState.WaitingForAction);
+            break;
+
+        case TurnState.EndTurn:
+            Debug.Log(_currentPlayer + " is ending their turn");
+            if (_currentPlayer.GetVictoryPoints() >= 10)
+            {
+                Debug.Log(_currentPlayer + " has won the game!");
+                SwitchState(TurnState.EndGame);
+            }
+            _playerManager.NextTurn();
+            _currentPlayer = _playerManager.GetCurrentPlayer();
+            SwitchState(TurnState.WaitingForRoll);
+            break;
+        
+        case TurnState.EndGame:
+            Debug.Log("Game over");
+            break;
     }
-    
+}
+
+    private bool SwitchState(TurnState newState)
+    {
+        if (_turnState != newState)
+        {
+            TurnState oldState = _turnState;
+            _turnState = newState;
+            Debug.Log("Switching from " + oldState + " to " + newState);
+            return true;
+        }
+        return false;
+    }
+
+    private void HandleActionInput()
+    {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            _turnState = TurnState.EndTurn;
+        } else if (Input.GetKeyDown(KeyCode.B)) //B for build
+        {
+            _turnState = TurnState.Building;
+        } else if (Input.GetKeyDown(KeyCode.T)) //T for trade
+        {
+            _turnState = TurnState.Trading;
+        } else if (Input.GetKeyDown(KeyCode.N)) //N for new card
+        {
+            _turnState = TurnState.BuyingDevelopmentCard;  
+        } else if (Input.GetKeyDown(KeyCode.C)) //C for card
+        {
+            _turnState = TurnState.PlayingDevelopmentCard;
+        }
+    }
+
     private int RollDice()
     {
         int result = UnityEngine.Random.Range(1, 7) + UnityEngine.Random.Range(1, 7);
-        Debug.Log("Player " + _currentPlayer + " rolled a " + result);
+        var currPlayer = _playerManager.GetCurrentPlayer();
+        Debug.Log("Player " + currPlayer + " rolled a " + result);
         return result;
-    }
-    
-    // Method to advance the turn to the next player
-    public void NextTurn()
-    {
-        // Increment the current player index
-        _currentPlayer++;
-
-        // If we've reached the end of the list, loop back to the beginning
-        if (_currentPlayer > players.Count)
-        {
-            _currentPlayer = 1;
-        }
-        //TODO: Perform any other actions that need to happen at the end of a turn
     }
 }
 
@@ -50,6 +146,7 @@ public enum TurnState {
     Rolling,                // The player is rolling the dice to determine resource harvesting.
     HarvestingResources,    // The player is collecting resources based on the outcome of the dice roll.
     MovingRobber,           // The player is moving the robber to a new location on the board.
+    WaitingForAction,       // The player is waiting to either Build, Buy Development Card, Play Development Card, or Trade.
     Building,               // The player is building a road, settlement, or city on the board.
     BuyingDevelopmentCard,  // The player is buying a development card from the bank.
     PlayingDevelopmentCard, // The player is playing a development card from their hand.
