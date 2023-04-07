@@ -538,6 +538,7 @@ GameObject:
   - component: {fileID: 210939793}
   - component: {fileID: 210939792}
   - component: {fileID: 210939791}
+  - component: {fileID: 210939794}
   m_Layer: 0
   m_Name: Camera
   m_TagString: Untagged
@@ -644,6 +645,26 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &210939794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 210939789}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 514c0e09e94080d498d2963c5ee98795, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 1907829368}
+  distance: 10
+  minDistance: 3
+  maxDistance: 8
+  zoomSpeed: 3
+  rotationSpeed: 720
+  minYAngle: 30
+  maxYAngle: 90
 --- !u!1001 &306555085
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4512,6 +4533,37 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 9020755870057148689, guid: 87b48a4d217227046a1ea139820f7ee5, type: 3}
   m_PrefabInstance: {fileID: 1866867392}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1907829367
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1907829368}
+  m_Layer: 0
+  m_Name: cameraTarget
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1907829368
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1907829367}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3701199451524332396}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1912010940
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6353,6 +6405,7 @@ Transform:
   - {fileID: 2860206663515039492}
   - {fileID: 56732835}
   - {fileID: 210939790}
+  - {fileID: 1907829368}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
