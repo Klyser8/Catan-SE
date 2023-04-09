@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
 {
 
     private PlayerManager _playerManager;
+    private DiceController _diceController;
     private TurnState _turnState = TurnState.GameStart;
     private int _lastRoll = 0;
     private PlayerController _currentPlayer;
@@ -16,6 +17,7 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         _playerManager = FindObjectOfType<PlayerManager>();
+        _diceController = FindObjectOfType<DiceController>();
         Debug.Log("Number of players found: " + _playerManager.playerCount);
     }
 
@@ -37,7 +39,7 @@ public class GameManager : MonoBehaviour
             break;
         
         case TurnState.Rolling:
-            _lastRoll = RollDice();
+            _diceController.RollDice();
             Debug.Log(_currentPlayer + " rolled a " + _lastRoll);
             if (_lastRoll != 7)
                 SwitchState(TurnState.HarvestingResources);
@@ -131,13 +133,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    private int RollDice()
+    /*private int RollDice()
     {
         int result = UnityEngine.Random.Range(1, 7) + UnityEngine.Random.Range(1, 7);
         var currPlayer = _playerManager.GetCurrentPlayer();
         Debug.Log("Player " + currPlayer + " rolled a " + result);
         return result;
-    }
+    }*/
 }
 
 public enum TurnState {
