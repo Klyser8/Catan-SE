@@ -11,7 +11,7 @@ public class BuildingPoint : MonoBehaviour
     public Transform buildingCheck;
     public float buildingCheckDistance = 0.01f;
     public LayerMask buildingMask;
-    private bool hasBuilding = false;
+    [SerializeField] public bool hasBuilding = false;
 
     public VisualEffect _markerEffect;
 
