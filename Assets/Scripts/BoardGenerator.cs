@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Serialization;
 
@@ -23,7 +24,7 @@ public class BoardGenerator : MonoBehaviour
     public GameObject eleven;
     public GameObject twelve;
 
-    private Vector3 desertNoNumber;
+    private Vector3 desertPos;
     
     ArrayList _tilePositions = new()
     {
@@ -85,7 +86,7 @@ public class BoardGenerator : MonoBehaviour
     void Start()
     {
         PopulateBoard();
-        PopulateNumbers();
+        // PopulateNumbers();
     }
 
     // Update is called once per frame
@@ -105,25 +106,6 @@ public class BoardGenerator : MonoBehaviour
             { oreTile, 3 },
             { desertTile, 1 },
         };
-        //Loop through each tile type
-        foreach (var tileType in tiles.Keys)
-        {
-            //Add each type of tile, as many times as specified in the Dictionary.
-            for (int i = 0; i < tiles[tileType]; i++)
-            {
-                var pos = (Vector3)_tilePositions[Random.Range(0, _tilePositions.Count)];
-                CreateTile(tileType, pos);
-                if(tileType == desertTile) {
-                    desertNoNumber = pos;
-                }
-                _tilePositions.Remove(pos); //Remove the position from the list
-            }
-        }
-    }
-
-    void PopulateNumbers()
-    {
-        // Debug.Log("Desert Position: " + desertNoNumber);
         Dictionary<GameObject, int> numbers = new Dictionary<GameObject, int>
         {
             { two, 1 },
@@ -137,21 +119,45 @@ public class BoardGenerator : MonoBehaviour
             { eleven, 2 },
             { twelve, 1 },
         };
-        //Loop through each tile type
-        foreach (var numType in numbers.Keys)
+        List<GameObject> createdTiles = new List<GameObject>();
+
+        // Loop through each tile type
+        foreach (var tileType in tiles.Keys)
         {
-            //Add each type of tile, as many times as specified in the Dictionary.
-            for (int i = 0; i < numbers[numType]; i++)
+            // Add each type of tile, as many times as specified in the Dictionary
+            for (int i = 0; i < tiles[tileType]; i++)
             {
-                var pos = (Vector3)_numPositions[Random.Range(0, _numPositions.Count)];
-                
-                // Debug.Log(numType + " " + pos);
-                if(pos == desertNoNumber){
-                    _numPositions.Remove(pos);
-                    pos = (Vector3)_numPositions[Random.Range(0, _numPositions.Count)];
+                var tilePos = (Vector3)_tilePositions[Random.Range(0, _tilePositions.Count)];
+                GameObject createdTile = CreateTile(tileType, tilePos);
+                _tilePositions.Remove(tilePos); // Remove the position from the list
+
+                if (tileType != desertTile)
+                {
+                    createdTiles.Add(createdTile);
                 }
-                CreateTile(numType, pos);
-                _numPositions.Remove(pos); //Remove the position from the list
+            }
+        }
+
+        // Loop through each created tile (excluding desert tile)
+        foreach (var tile in createdTiles)
+        {
+            // Get a random number, and remove it from the list of numbers/counts
+            int randomIndex = Random.Range(0, numbers.Count);
+            KeyValuePair<GameObject, int> randomPair = numbers.ElementAt(randomIndex);
+            numbers[randomPair.Key]--;
+
+            // Get TileData component from the tile and assign the number
+            var tileData = tile.GetComponent<TileData>();
+            tileData.SetNumber(randomPair.Key);
+
+            // Create the number token on top of the tile
+            Vector3 numberPosition = tile.transform.position;
+            CreateTile(randomPair.Key, numberPosition);
+
+            // Remove the number token from the dictionary if its count reaches zero
+            if (numbers[randomPair.Key] == 0)
+            {
+                numbers.Remove(randomPair.Key);
             }
         }
     }

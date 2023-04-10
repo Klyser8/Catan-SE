@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using UnityEngine;
 
 namespace Player
@@ -5,12 +7,15 @@ namespace Player
     public class PlayerController : MonoBehaviour
     {
     
+        private GameManager _gameManager;
         private int _victoryPoints = 0;
         private ResourceHandler _resourceHandler;
+        private ArrayList _buildings = new();
 
         // Start is called before the first frame update
         void Start()
         {
+            _gameManager = FindObjectOfType<GameManager>();
             _resourceHandler = gameObject.AddComponent<ResourceHandler>();
         }
 
@@ -33,6 +38,11 @@ namespace Player
         public int GetVictoryPoints()
         {
             return _victoryPoints;
+        }
+        
+        public void AddSettlement(GameObject settlement)
+        {
+            _buildings.Add(settlement);
         }
         
         public ResourceHandler GetResourceHandler()

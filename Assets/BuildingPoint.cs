@@ -5,9 +5,6 @@ using UnityEngine.VFX;
 
 public class BuildingPoint : MonoBehaviour
 {
-    // public GameObject settelment;
-    // public GameObject city;
-
     public Transform buildingCheck;
     public float buildingCheckDistance = 0.01f;
     public LayerMask buildingMask;
@@ -20,7 +17,7 @@ public class BuildingPoint : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlayPartical();
+        PlayParticles();
     }
 
     // Update is called once per frame
@@ -38,7 +35,7 @@ public class BuildingPoint : MonoBehaviour
         Gizmos.DrawSphere(buildingCheck.position, buildingCheckDistance);
     }
 
-    void PlayPartical() {
+    void PlayParticles() {
         _markerEffect.Play();
     }
 
