@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc7e3fbc7eabe0f499ef1df75b4ec9a9, type: 3}
   m_Name: SettlementBuildingData
   m_EditorClassIdentifier: 
-  woodCost: 1
-  wheatCost: 1
-  clayCost: 1
+  woodCost: 0
+  wheatCost: 0
+  clayCost: 0
   oreCost: 0
-  sheepCost: 1
+  sheepCost: 0

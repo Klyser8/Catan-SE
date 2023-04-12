@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8311669769846550176}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: road 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23,15 +23,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1481474431708887447}
-  m_LocalRotation: {x: 0, y: -0.7076311, z: 0, w: 0.7065821}
+  m_LocalRotation: {x: 0, y: -0.0007417111, z: 0, w: 0.99999976}
   m_LocalPosition: {x: -0.4325, y: 0.105, z: -1.498}
   m_LocalScale: {x: 0.84422, y: 0.56279, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6951587635538187393}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
-  m_LocalEulerAnglesHint: {x: 0, y: -90.085, z: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -0.085, z: 0}
 --- !u!1 &7484662835401312262
 GameObject:
   m_ObjectHideFlags: 0
@@ -43,7 +43,8 @@ GameObject:
   - component: {fileID: 8217356911876979555}
   - component: {fileID: 7044456726749796890}
   - component: {fileID: 2664019521829066468}
-  m_Layer: 0
+  - component: {fileID: 4983179322296328419}
+  m_Layer: 8
   m_Name: HoneyComb.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -115,6 +116,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &4983179322296328419
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7484662835401312262}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6642149115374435245, guid: 1b89ceed9d61380468f520d06a233a44, type: 3}
 --- !u!1 &7724465778177609275
 GameObject:
   m_ObjectHideFlags: 0
@@ -124,7 +139,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6951587635538187393}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: road
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -159,7 +174,8 @@ GameObject:
   - component: {fileID: 8416251410550731651}
   - component: {fileID: 4470589321169678028}
   - component: {fileID: 5547856416905937737}
-  m_Layer: 0
+  - component: {fileID: 6288329344332437650}
+  m_Layer: 8
   m_Name: HoneyComb
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -231,3 +247,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &6288329344332437650
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9047947357455384052}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -2967515693364497616, guid: 1b89ceed9d61380468f520d06a233a44, type: 3}

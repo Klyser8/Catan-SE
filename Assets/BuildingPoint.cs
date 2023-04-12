@@ -11,13 +11,17 @@ public class BuildingPoint : MonoBehaviour
     [SerializeField] public bool hasBuilding = false;
 
     public VisualEffect _markerEffect;
+    public bool playEffect;
 
     
     
     // Start is called before the first frame update
     void Start()
     {
+
         PlayParticles();
+        playEffect = true;
+
     }
 
     // Update is called once per frame
@@ -25,9 +29,12 @@ public class BuildingPoint : MonoBehaviour
     {
        hasBuilding = Physics.CheckSphere(buildingCheck.position, buildingCheckDistance, buildingMask);
        
-       if(hasBuilding) {
-            StopPartical(); 
-        } 
+       if(playEffect) {
+          if(hasBuilding) {
+              playEffect = false;
+              StopPartical(); 
+          } 
+       }
         
     }
 
