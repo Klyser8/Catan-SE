@@ -18,9 +18,9 @@ public class DiceController : MonoBehaviour
         if (die1 != null) Destroy(die1);
         if (die2 != null) Destroy(die2);
 
-        die1 = Instantiate(diePrefab, spawnPosition, Quaternion.identity);
-        die2 = Instantiate(diePrefab, spawnPosition + new Vector3(2f, 0, 0), Quaternion.identity);
-
+        die1 = Instantiate(diePrefab, spawnPosition + new Vector3(-0.25f, 0, -0.25f), Random.rotation);
+        die2 = Instantiate(diePrefab, spawnPosition + new Vector3(0.25f, 0, 0.25f), Random.rotation);
+        
         die1.GetComponent<Rigidbody>().AddTorque(Random.insideUnitSphere * rollForce, ForceMode.Impulse);
         die2.GetComponent<Rigidbody>().AddTorque(Random.insideUnitSphere * rollForce, ForceMode.Impulse);
 
