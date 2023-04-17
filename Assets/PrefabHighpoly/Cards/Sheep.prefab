@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 117111248765229187}
   - component: {fileID: 462361063245265538}
   - component: {fileID: 2324726565966395763}
-  - component: {fileID: 3075802145571539898}
   - component: {fileID: 2572662501007778376}
   m_Layer: 5
   m_Name: Sheep
@@ -38,7 +37,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 256, y: 362}
+  m_SizeDelta: {x: 117, y: 145}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &462361063245265538
 CanvasRenderer:
@@ -78,18 +77,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &3075802145571539898
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2968696031703932721}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 998cdca1d266f39428ba529671b05bc4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &2572662501007778376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,8 +92,8 @@ MonoBehaviour:
   m_IgnoreLayout: 0
   m_MinWidth: -1
   m_MinHeight: -1
-  m_PreferredWidth: 256
-  m_PreferredHeight: 362
+  m_PreferredWidth: 117
+  m_PreferredHeight: 145
   m_FlexibleWidth: 0
   m_FlexibleHeight: 0
   m_LayoutPriority: 1
