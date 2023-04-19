@@ -45,6 +45,11 @@ namespace Player
             _buildings.Add(settlement);
         }
         
+        public ArrayList GetBuildings()
+        {
+            return _buildings;
+        }
+        
         public ResourceHandler GetResourceHandler()
         {
             return _resourceHandler;

@@ -25,8 +25,10 @@ public class BoardGenerator : MonoBehaviour
     public GameObject twelve;
 
     private Vector3 desertPos;
+
+    [SerializeField] private Transform buildingPointsHolder;
     
-    ArrayList _tilePositions = new()
+    private ArrayList _tilePositions = new()
     {
         //Middle row
         new Vector3(0f, 0f, 0f),
@@ -54,7 +56,7 @@ public class BoardGenerator : MonoBehaviour
         new Vector3(0.866f, 0f, -1.5f),
     };
 
-    ArrayList _numPositions = new()
+    private ArrayList _numPositions = new()
     {
         //Middle row
         new Vector3(0f, 0f, 0f),
@@ -81,15 +83,15 @@ public class BoardGenerator : MonoBehaviour
         new Vector3(-0f, 0f, -1.5f),
         new Vector3(0.866f, 0f, -1.5f),
     };
+    
+    private Dictionary<Vector3, GameObject> _tileDictionary = new();
 
-    // Start is called before the first frame update
     void Start()
     {
         PopulateBoard();
-        // PopulateNumbers();
+        AssignAdjacentTilesToBuildingPoints();
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -119,7 +121,6 @@ public class BoardGenerator : MonoBehaviour
             { eleven, 2 },
             { twelve, 1 },
         };
-        List<GameObject> createdTiles = new List<GameObject>();
 
         // Loop through each tile type
         foreach (var tileType in tiles.Keys)
@@ -133,13 +134,13 @@ public class BoardGenerator : MonoBehaviour
 
                 if (tileType != desertTile)
                 {
-                    createdTiles.Add(createdTile);
+                    _tileDictionary[tilePos] = createdTile;
                 }
             }
         }
 
         // Loop through each created tile (excluding desert tile)
-        foreach (var tile in createdTiles)
+        foreach (var tile in _tileDictionary.Values)
         {
             // Get a random number, and remove it from the list of numbers/counts
             int randomIndex = Random.Range(0, numbers.Count);
@@ -168,4 +169,29 @@ public class BoardGenerator : MonoBehaviour
         newTile.transform.position = position; //Move the cloned tile to the position picked
         return newTile;
     }
+    
+    /**
+     * Assigns adjacent tiles to each building point.
+     * @param adjacencyThreshold The distance threshold for a tile to be considered adjacent to a building point.
+     */
+    private void AssignAdjacentTilesToBuildingPoints(float adjacencyThreshold = 0.5f)
+    {
+        for (int i = 0; i < buildingPointsHolder.childCount; i++)
+        {
+            var buildingPoint = buildingPointsHolder.GetChild(i).GetComponent<BuildingPoint>();
+            foreach (var tileObject in _tileDictionary.Values)
+            {
+                if (Vector3.Distance(tileObject.transform.position, buildingPoint.transform.position) <= adjacencyThreshold)
+                {
+                    buildingPoint.GetAdjacentTiles().Add(tileObject);
+                }
+            }
+        }
+    }
+
+    public Dictionary<Vector3, GameObject> GetTileDictionary()
+    {
+        return _tileDictionary;
+    }
+
 }

@@ -133,14 +133,18 @@ public class GameManager : MonoBehaviour
             _turnState = TurnState.PlayingDevelopmentCard;
         }
     }
-
-    /*private int RollDice()
+    
+    
+    public void CollectResources()
     {
-        int result = UnityEngine.Random.Range(1, 7) + UnityEngine.Random.Range(1, 7);
-        var currPlayer = _playerManager.GetCurrentPlayer();
-        Debug.Log("Player " + currPlayer + " rolled a " + result);
-        return result;
-    }*/
+        foreach (var player in _playerManager.GetPlayerControllers())
+        {
+            foreach (var building in player.GetBuildings())
+            {
+                
+            }
+        }
+    }
 }
 
 public enum TurnState {

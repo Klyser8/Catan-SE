@@ -13,7 +13,9 @@ public class BuildHandler : MonoBehaviour
 
     [FormerlySerializedAs("settelment")] public GameObject settlement;
     public GameObject city;
-    
+
+    [SerializeField] private Transform settlementHolder;
+
     private PlayerManager _playerManager;
     private GameManager _gameManager;
     // Start is called before the first frame update

@@ -13,7 +13,7 @@ public class BuildingPoint : MonoBehaviour
     public VisualEffect _markerEffect;
     public bool playEffect;
 
-    
+    private List<GameObject> _adjacentTiles = new();
     
     // Start is called before the first frame update
     void Start()
@@ -32,10 +32,14 @@ public class BuildingPoint : MonoBehaviour
        if(playEffect) {
           if(hasBuilding) {
               playEffect = false;
-              StopPartical(); 
+              StopParticles(); 
           } 
        }
         
+    }
+    
+    public List<GameObject> GetAdjacentTiles() {
+        return _adjacentTiles;
     }
 
     private void OnDrawGizmos() {
@@ -46,7 +50,7 @@ public class BuildingPoint : MonoBehaviour
         _markerEffect.Play();
     }
 
-    void StopPartical() {
+    void StopParticles() {
         _markerEffect.Stop();
     }
     
