@@ -2,6 +2,9 @@ using UnityEngine;
 
 namespace Player
 {
+    /**
+     * Script to handle a player's resources.
+     */
     public class ResourceHandler : MonoBehaviour
     {
     

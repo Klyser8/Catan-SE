@@ -102,6 +102,10 @@ public class GameManager : MonoBehaviour
     }
 }
 
+    /**
+     * Switches the game state to the a new state.
+     * Mostly used for debugging purposes.
+     */
     private bool SwitchState(TurnState newState)
     {
         if (_turnState != newState)
@@ -114,6 +118,10 @@ public class GameManager : MonoBehaviour
         return false;
     }
 
+    /**
+     * Handles the input for the player's actions.
+     * This should be replaced with input from the UI.
+     */
     private void HandleActionInput()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -134,7 +142,12 @@ public class GameManager : MonoBehaviour
         }
     }
     
-    
+    /**
+     * Provides the players with the resources found near their settlements and cities.
+     * This method should be called when the dice are rolled and the number rolled is not 7.
+     * It should also be called at the start of the game,
+     * when the players are given their initial resources from the second settlements they placed.
+     */
     public void CollectResources()
     {
         foreach (var player in _playerManager.GetPlayerControllers())
@@ -147,6 +160,9 @@ public class GameManager : MonoBehaviour
     }
 }
 
+/**
+ * The TurnState enum is used to keep track of the current state of the game.
+ */
 public enum TurnState {
     GameStart,              // The game is starting.
     WaitingForRoll,         // The game is waiting for the player to roll the dice.

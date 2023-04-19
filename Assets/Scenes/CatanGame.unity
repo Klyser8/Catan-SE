@@ -1660,7 +1660,7 @@ MonoBehaviour:
   ten: {fileID: 4605336652185756609, guid: 7ecb780cf9480684da7e8dc58dcb7b48, type: 3}
   eleven: {fileID: 7697065928949435733, guid: 8b49c4ecdacfcb6498bf722835cf8ead, type: 3}
   twelve: {fileID: 1943721384128768282, guid: e84462f48d4d63d4a99cc2db6dd546d3, type: 3}
-  buildingPointsHolder: {fileID: 875838874}
+  buildingPointsHolder: {fileID: 1084615893}
 --- !u!4 &121955843
 Transform:
   m_ObjectHideFlags: 0
@@ -2814,7 +2814,6 @@ GameObject:
   - component: {fileID: 210939790}
   - component: {fileID: 210939793}
   - component: {fileID: 210939795}
-  - component: {fileID: 210939794}
   - component: {fileID: 210939792}
   - component: {fileID: 210939791}
   m_Layer: 0
@@ -2923,28 +2922,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!114 &210939794
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 210939789}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2d47a49b4c2dcb74bbb126dd84b1074f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cam: {fileID: 210939793}
-  point:
-    serializedVersion: 2
-    m_Bits: 0
-  settlement: {fileID: 7383020439357558033, guid: a2cd186293b236b4daaac4241e20255d, type: 3}
-  city: {fileID: 4061270665596298065, guid: d2e226e0913ddd549853d606f63a7925, type: 3}
-  settlementHolder: {fileID: 0}
-  settlementBuildingData: {fileID: 11400000, guid: b677bdb12f1683b4aba02ee9387b71fc, type: 2}
-  cityBuildingData: {fileID: 11400000, guid: 92c3bfcfe737cb042b3db4a9a94e99a5, type: 2}
-  roadBuildingData: {fileID: 11400000, guid: fb08a429a56a2ff4b98eec8265e21894, type: 2}
 --- !u!114 &210939795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2961,7 +2938,7 @@ MonoBehaviour:
   distance: 10
   minDistance: 3
   maxDistance: 8
-  zoomSpeed: 1
+  zoomSpeed: 3
   rotationSpeed: 720
   minYAngle: 30
   maxYAngle: 90
@@ -11554,7 +11531,6 @@ Transform:
   m_Children:
   - {fileID: 2118767356}
   - {fileID: 1084615893}
-  - {fileID: 2118767356}
   m_Father: {fileID: 5332685811760331413}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -15018,7 +14994,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: -0.00024414062, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1920, y: 94.9031}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1206075395
@@ -18434,7 +18410,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -45.277832, y: -39.269897}
+  m_AnchoredPosition: {x: -45.277832, y: -39.27002}
   m_SizeDelta: {x: 90.55591, y: 78.539795}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1453843543
@@ -21494,8 +21470,8 @@ MonoBehaviour:
   point:
     serializedVersion: 2
     m_Bits: 0
-  settlement: {fileID: 0}
-  city: {fileID: 0}
+  settlement: {fileID: 7383020439357558033, guid: 822f19b8df4c94c46a66fa08d2f6c63e, type: 3}
+  city: {fileID: 4061270665596298065, guid: 43923b4957f307643a39d3abc42408a8, type: 3}
   settlementHolder: {fileID: 0}
   settlementBuildingData: {fileID: 11400000, guid: b677bdb12f1683b4aba02ee9387b71fc, type: 2}
   cityBuildingData: {fileID: 11400000, guid: 92c3bfcfe737cb042b3db4a9a94e99a5, type: 2}

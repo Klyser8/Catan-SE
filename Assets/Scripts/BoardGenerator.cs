@@ -97,7 +97,13 @@ public class BoardGenerator : MonoBehaviour
         
     }
 
-    void PopulateBoard()
+    /**
+     * Populates the game board with tiles and their corresponding number tokens.
+     * The method creates each type of tile (forest, hay, field, clay, ore, and desert)
+     * based on the specified quantities and assigns random numbers to the tiles (excluding the desert tile).
+     * The created tiles and their positions are stored in _tileDictionary.
+     */
+    private void PopulateBoard()
     {
         Dictionary<GameObject, int> tiles = new Dictionary<GameObject, int>
         {
@@ -163,6 +169,13 @@ public class BoardGenerator : MonoBehaviour
         }
     }
 
+    /**
+     * Creates a new tile of the specified type and assigns it to the given position.
+     *
+     * @param tileType The type of tile to create (forest, hay, field, clay, ore, or desert).
+     * @param The position where the tile will be placed.
+     * @return A new GameObject instance of the created tile.
+     */
     GameObject CreateTile(GameObject tileType, Vector3 position)
     {
         var newTile = Instantiate(tileType);
@@ -171,10 +184,13 @@ public class BoardGenerator : MonoBehaviour
     }
     
     /**
-     * Assigns adjacent tiles to each building point.
-     * @param adjacencyThreshold The distance threshold for a tile to be considered adjacent to a building point.
+     * Assigns adjacent tiles to each building point on the game board.
+     * A tile is considered adjacent if its distance to the building point is less than or equal to the adjacencyThreshold.
+     *
+     * @param adjacencyThreshold The maximum distance between a building point and a
+     *                           tile for them to be considered adjacent (default value is 0.6f).
      */
-    private void AssignAdjacentTilesToBuildingPoints(float adjacencyThreshold = 0.5f)
+    private void AssignAdjacentTilesToBuildingPoints(float adjacencyThreshold = 0.6f)
     {
         for (int i = 0; i < buildingPointsHolder.childCount; i++)
         {

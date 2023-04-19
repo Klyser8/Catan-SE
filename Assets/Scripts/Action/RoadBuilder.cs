@@ -18,8 +18,8 @@ public class RoadBuilder : MonoBehaviour
     public LayerMask buildingMask;
     public LayerMask roadMask;
 
-    public VisualEffect _buildHereLeft;
-    public VisualEffect _buildHereRight;
+    public VisualEffect buildHereLeft;
+    public VisualEffect buildHereRight;
 
     public bool playLeft = false;
     public bool playRight = false;
@@ -46,7 +46,7 @@ public class RoadBuilder : MonoBehaviour
             if(Physics.CheckSphere(checkBuildingLeft.position, checkDistance, buildingMask)) {
                 if(!playLeft){
                     playLeft = true;
-                    PlayParticalLeft();
+                    PlayParticleLeft();
                     canBuild = true;
                 }
             } 
@@ -54,7 +54,7 @@ public class RoadBuilder : MonoBehaviour
             if(Physics.CheckSphere(checkBuildingRight.position, checkDistance, buildingMask) ) {
                 if(!playRight){
                     playRight = true;
-                    PlayParticalRight();
+                    PlayParticleRight();
                     canBuild = true;
                 }
             }
@@ -65,7 +65,7 @@ public class RoadBuilder : MonoBehaviour
                 if(!playLeft) {
                     if(!playLeft){
                         playLeft = true;
-                        PlayParticalLeft();
+                        PlayParticleLeft();
                         canBuild = true;
                     }
                 }
@@ -75,7 +75,7 @@ public class RoadBuilder : MonoBehaviour
                 if(!playRight) {
                     if(!playRight){
                         playRight = true;
-                        PlayParticalRight();
+                        PlayParticleRight();
                         canBuild = true;
                     }
                 }
@@ -86,7 +86,7 @@ public class RoadBuilder : MonoBehaviour
                 if(!playLeft) {
                     if(!playLeft){
                         playLeft = true;
-                        PlayParticalLeft();
+                        PlayParticleLeft();
                         canBuild = true;
                     }
                 }
@@ -96,7 +96,7 @@ public class RoadBuilder : MonoBehaviour
                 if(!playRight) {
                     if(!playRight){
                         playRight = true;
-                        PlayParticalRight();
+                        PlayParticleRight();
                         canBuild = true;
                     }
                 }
@@ -108,12 +108,12 @@ public class RoadBuilder : MonoBehaviour
         if(hasRoad) {
             if(playLeft) {
                 playLeft = false;
-                StopParticalLeft();
+                StopParticleLeft();
                 canBuild = false;
             }
             if(playRight) {
                 playRight = false;
-                StopParticalRight();
+                StopParticleRight();
                 canBuild = false;
             }
         } 
@@ -133,23 +133,23 @@ public class RoadBuilder : MonoBehaviour
     //     Gizmos.DrawSphere(checkRoad.position, checkDistance);
     // }
 
-    void PlayParticalLeft() {
+    void PlayParticleLeft() {
         Debug.Log("Play Left");
-        _buildHereLeft.Play();
+        buildHereLeft.Play();
     }
 
-    void StopParticalLeft() {
+    void StopParticleLeft() {
         Debug.Log("Stop Left");
-        _buildHereLeft.Stop();
+        buildHereLeft.Stop();
     }
 
-    void PlayParticalRight() {
+    void PlayParticleRight() {
         Debug.Log("Play Right");
-        _buildHereRight.Play();
+        buildHereRight.Play();
     }
 
-    void StopParticalRight() {
+    void StopParticleRight() {
         Debug.Log("Play Right");
-        _buildHereRight.Stop();
+        buildHereRight.Stop();
     }
 }

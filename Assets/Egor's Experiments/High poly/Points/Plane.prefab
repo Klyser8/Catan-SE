@@ -267,11 +267,13 @@ MonoBehaviour:
   roadMask:
     serializedVersion: 2
     m_Bits: 256
-  _buildHereLeft: {fileID: 4542286604638273453}
-  _buildHereRight: {fileID: 6651976333213315555}
+  buildHereLeft: {fileID: 4542286604638273453}
+  buildHereRight: {fileID: 6651976333213315555}
   playLeft: 0
   playRight: 0
   hasRoad: 0
+  hasRoadOnSide: 0
+  canBuild: 0
 --- !u!64 &4085573416776237833
 MeshCollider:
   m_ObjectHideFlags: 0

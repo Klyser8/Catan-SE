@@ -4,14 +4,13 @@ using System.Resources;
 using Action;
 using Player;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class BuildHandler : MonoBehaviour
 {
     public Camera cam;
     public LayerMask point;
 
-    [FormerlySerializedAs("settelment")] public GameObject settlement;
+    public GameObject settlement;
     public GameObject city;
 
     [SerializeField] private Transform settlementHolder;
@@ -40,8 +39,14 @@ public class BuildHandler : MonoBehaviour
         if (!Input.GetMouseButtonDown(0)) return;
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
-        if (!Physics.Raycast(ray, out hit, 100, point)) return;
+        Debug.Log("1");
+        if (!Physics.Raycast(ray, out hit, 100, point))
+        {   
+            return;
+        }
+        Debug.Log(hit.transform.GetComponent<BuildingPoint>() == null);
         if (hit.transform.GetComponent<BuildingPoint>().hasBuilding) return;
+        Debug.Log("3");
         
         // Debug.Log(hit.transform.gameObject.transform.position);
         var settlement = TryBuildingSettlement(hit.transform.position);
@@ -67,18 +72,18 @@ public class BuildHandler : MonoBehaviour
     GameObject TryBuildingSettlement (Vector3 position) {
         var player = _playerManager.GetCurrentPlayer();
         ResourceHandler resourceHandler = player.GetResourceHandler();
-        if (resourceHandler.HasResources(
+        /*if (resourceHandler.HasResources(
                 settlementBuildingData.woodCost, 
                 settlementBuildingData.wheatCost,
                 settlementBuildingData.clayCost, 
                 settlementBuildingData.oreCost, 
                 settlementBuildingData.sheepCost))
-        {
+        {*/
             Debug.Log(player + " is building a settlement");
             var newBuilding = Instantiate(settlement);
             newBuilding.transform.position = position;
             return newBuilding;
-        }
+        // }
         return null;
     }
 }
