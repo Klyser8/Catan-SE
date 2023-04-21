@@ -14,6 +14,9 @@ public class BuildHandler : MonoBehaviour
     public GameObject settlement;
     public GameObject city;
 
+    public int currentPlayerIndex = 1;
+
+
 
     // [SerializeField] private Transform settlementHolder;
 
@@ -26,6 +29,7 @@ public class BuildHandler : MonoBehaviour
     public ActionData roadBuildingData;
 
     [SerializeField] private RoadHandler roadHandler;
+    [SerializeField] private ColorManager colorManager;
 
     void Start()
     {
@@ -106,6 +110,13 @@ public class BuildHandler : MonoBehaviour
             Debug.Log(player + " is building a settlement");
             var newBuilding = Instantiate(settlement);
             newBuilding.transform.position = position;
+            float randomAngle = Random.Range(0f, 360f);
+            Quaternion randomRotation = Quaternion.Euler(Vector3.up * randomAngle);
+            Quaternion currentRotation = newBuilding.transform.rotation;
+
+        // Add the random rotation to the provided rotation
+            newBuilding.transform.rotation = currentRotation * randomRotation;
+            colorManager.SetColor(newBuilding, currentPlayerIndex);
             return newBuilding;
         // }
         return null;
