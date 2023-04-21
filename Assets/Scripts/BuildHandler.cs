@@ -9,11 +9,13 @@ public class BuildHandler : MonoBehaviour
 {
     public Camera cam;
     public LayerMask point;
+    public LayerMask roadPoint;
 
     public GameObject settlement;
     public GameObject city;
 
-    [SerializeField] private Transform settlementHolder;
+
+    // [SerializeField] private Transform settlementHolder;
 
     private PlayerManager _playerManager;
     private GameManager _gameManager;
@@ -22,6 +24,9 @@ public class BuildHandler : MonoBehaviour
     public ActionData settlementBuildingData;
     public ActionData cityBuildingData;
     public ActionData roadBuildingData;
+
+    [SerializeField] private RoadHandler roadHandler;
+
     void Start()
     {
         _playerManager = FindObjectOfType<PlayerManager>();
@@ -34,34 +39,53 @@ public class BuildHandler : MonoBehaviour
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = 10f;
         mousePos = cam.ScreenToWorldPoint(mousePos);
-        Debug.DrawRay(transform.position, mousePos - transform.position, Color.yellow);
+        // Debug.DrawRay(transform.position, mousePos - transform.position, Color.yellow);
 
-        if (!Input.GetMouseButtonDown(0)) return;
-        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-        Debug.Log("1");
-        if (!Physics.Raycast(ray, out hit, 100, point))
-        {   
-            return;
+        if (Input.GetMouseButtonDown(0)) {
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+            Debug.Log("1");
+
+            if(Physics.Raycast(ray, out hit)) {
+                Debug.Log(hit.collider.gameObject.name);
+            }
+            if (Physics.Raycast(ray, out hit, 100, roadPoint)) 
+                {
+                    
+                    if(hit.transform.GetComponent<RoadBuilder>().canBuild) 
+                    {
+                        Debug.Log(hit.collider.gameObject.name + " Again");
+                        roadHandler.BuildRoad(hit.transform.position, hit.transform.rotation);
+                    }
+                }
+
+            if (Physics.Raycast(ray, out hit, 100, point))
+            {   
+                Debug.Log(hit.transform.GetComponent<BuildingPoint>() == null);
+                if (!hit.transform.GetComponent<BuildingPoint>().hasBuilding) {
+                    Debug.Log("3");
+            
+                    // Debug.Log(hit.transform.gameObject.transform.position);
+                    var settlement = TryBuildingSettlement(hit.transform.position);
+                    if (settlement != null)
+                    {
+                        var player = _playerManager.GetCurrentPlayer();
+                        var settlementData = settlementBuildingData;
+                        player.GetResourceHandler().SubtractResources(
+                            settlementData.woodCost, 
+                            settlementData.wheatCost, 
+                            settlementData.clayCost, 
+                            settlementData.oreCost,
+                            settlementData.sheepCost);
+                        player.AddSettlement(settlement);
+                    }
+                    return;
+                }
+            } 
+            
+            
         }
-        Debug.Log(hit.transform.GetComponent<BuildingPoint>() == null);
-        if (hit.transform.GetComponent<BuildingPoint>().hasBuilding) return;
-        Debug.Log("3");
         
-        // Debug.Log(hit.transform.gameObject.transform.position);
-        var settlement = TryBuildingSettlement(hit.transform.position);
-        if (settlement != null)
-        {
-            var player = _playerManager.GetCurrentPlayer();
-            var settlementData = settlementBuildingData;
-            player.GetResourceHandler().SubtractResources(
-                settlementData.woodCost, 
-                settlementData.wheatCost, 
-                settlementData.clayCost, 
-                settlementData.oreCost,
-                settlementData.sheepCost);
-            player.AddSettlement(settlement);
-        }
     }
 
     /**

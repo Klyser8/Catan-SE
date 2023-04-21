@@ -7184,6 +7184,51 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 117718142172333886, guid: 9baf8bfc3d95b4f41be0647e6b1a143d, type: 3}
   m_PrefabInstance: {fileID: 516584243}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &516643186
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 516643188}
+  - component: {fileID: 516643187}
+  m_Layer: 0
+  m_Name: roadHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &516643187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516643186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd61cf26bb42ae848b0648b031820dc9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  road: {fileID: 1481474431708887447, guid: 6c0c178c164085448903bc2cdf84c6f1, type: 3}
+--- !u!4 &516643188
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 516643186}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 46.977585, y: -49.105152, z: 31.328314}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &517374720 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6211548561356516349, guid: 87b48a4d217227046a1ea139820f7ee5, type: 3}
@@ -15170,6 +15215,24 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 87b48a4d217227046a1ea139820f7ee5, type: 3}
+--- !u!1 &1242040577 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4268181229135560374, guid: 9baf8bfc3d95b4f41be0647e6b1a143d, type: 3}
+  m_PrefabInstance: {fileID: 7634765}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1242040583
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242040577}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 11.652124, y: 0.20788, z: 10.291943}
+  m_Center: {x: -128.3272, y: -0.0055212937, z: 0.009729548}
 --- !u!1 &1254389140
 GameObject:
   m_ObjectHideFlags: 0
@@ -21469,13 +21532,16 @@ MonoBehaviour:
   cam: {fileID: 210939793}
   point:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 64
+  roadPoint:
+    serializedVersion: 2
+    m_Bits: 128
   settlement: {fileID: 7383020439357558033, guid: 822f19b8df4c94c46a66fa08d2f6c63e, type: 3}
   city: {fileID: 4061270665596298065, guid: 43923b4957f307643a39d3abc42408a8, type: 3}
-  settlementHolder: {fileID: 0}
   settlementBuildingData: {fileID: 11400000, guid: b677bdb12f1683b4aba02ee9387b71fc, type: 2}
   cityBuildingData: {fileID: 11400000, guid: 92c3bfcfe737cb042b3db4a9a94e99a5, type: 2}
   roadBuildingData: {fileID: 11400000, guid: fb08a429a56a2ff4b98eec8265e21894, type: 2}
+  roadHandler: {fileID: 516643187}
 --- !u!4 &1636261815
 Transform:
   m_ObjectHideFlags: 0
@@ -28250,7 +28316,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2118767355}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.003, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
