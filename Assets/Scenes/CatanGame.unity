@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 1095128}
   - component: {fileID: 1095127}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -223,6 +223,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1977804203}
+        m_TargetAssemblyTypeName: ActiveDevCardManager, Assembly-CSharp
+        m_MethodName: ReturnCard
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7991,7 +8003,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b1e423d1e150bf349b53aabc8845bfe8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b657fa54a7a392a4c84f6e18511a3aa9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -8896,7 +8908,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b1e423d1e150bf349b53aabc8845bfe8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f7a63ffe8adbd8a458c7a23c2512e65a, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -11361,7 +11373,7 @@ GameObject:
   - component: {fileID: 721964345}
   - component: {fileID: 721964344}
   m_Layer: 5
-  m_Name: VP
+  m_Name: VP 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11786,7 +11798,7 @@ GameObject:
   - component: {fileID: 785335928}
   - component: {fileID: 785335927}
   m_Layer: 5
-  m_Name: VP
+  m_Name: VP 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15374,8 +15386,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -16323,6 +16335,7 @@ GameObject:
   - component: {fileID: 1186158086}
   - component: {fileID: 1186158085}
   - component: {fileID: 1186158084}
+  - component: {fileID: 1186158087}
   m_Layer: 5
   m_Name: Players
   m_TagString: Untagged
@@ -16418,6 +16431,23 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1186158082}
   m_CullTransparentMesh: 1
+--- !u!114 &1186158087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1186158082}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 74edf370fc918374988f98b68eb16f1f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  players:
+  - {fileID: 785335925}
+  - {fileID: 721964342}
+  - {fileID: 1633408329}
+  - {fileID: 1396354171}
 --- !u!4 &1191984504 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a2c870c958ea5b242b60b3741a00e745, type: 3}
@@ -17412,8 +17442,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -18721,8 +18751,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -19392,7 +19422,7 @@ GameObject:
   - component: {fileID: 1396354174}
   - component: {fileID: 1396354173}
   m_Layer: 5
-  m_Name: VP
+  m_Name: VP 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23250,7 +23280,7 @@ GameObject:
   - component: {fileID: 1633408332}
   - component: {fileID: 1633408331}
   m_Layer: 5
-  m_Name: VP
+  m_Name: VP 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -23573,6 +23603,7 @@ MonoBehaviour:
   roadBuildingData: {fileID: 11400000, guid: fb08a429a56a2ff4b98eec8265e21894, type: 2}
   roadHandler: {fileID: 516643187}
   colorManager: {fileID: 795001138}
+  _VPWriter: {fileID: 1186158087}
 --- !u!4 &1636261815
 Transform:
   m_ObjectHideFlags: 0
@@ -24795,7 +24826,7 @@ GameObject:
   - component: {fileID: 1736527867}
   - component: {fileID: 1736527866}
   m_Layer: 5
-  m_Name: Button
+  m_Name: Play
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -24877,6 +24908,30 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1977804197}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1117911234}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
         m_CallState: 2
 --- !u!114 &1736527867
 MonoBehaviour:
@@ -26084,8 +26139,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -28863,8 +28918,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1660, y: -363}
-  m_SizeDelta: {x: 317.9749, y: 293.0635}
+  m_AnchoredPosition: {x: 1660, y: -426.84}
+  m_SizeDelta: {x: 317.9749, y: 420.75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1977804199
 MonoBehaviour:
@@ -28962,6 +29017,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed77215beba8e554a8c06fecbc92712a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  hand: {fileID: 1042678340}
 --- !u!1001 &1984499156
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -31131,7 +31187,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: b1e423d1e150bf349b53aabc8845bfe8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 97383928b81bda44f833552187dc27fc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

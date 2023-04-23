@@ -15,8 +15,7 @@ public class BuildHandler : MonoBehaviour
     public GameObject city;
 
     public int currentPlayerIndex = 1;
-
-
+    
 
     // [SerializeField] private Transform settlementHolder;
 
@@ -30,6 +29,9 @@ public class BuildHandler : MonoBehaviour
 
     [SerializeField] private RoadHandler roadHandler;
     [SerializeField] private ColorManager colorManager;
+    [SerializeField] private VictoryPointsWriter _VPWriter;
+    
+    private float vicPoint = 1;
 
     void Start()
     {
@@ -82,6 +84,8 @@ public class BuildHandler : MonoBehaviour
                             settlementData.oreCost,
                             settlementData.sheepCost);
                         player.AddSettlement(settlement);
+                        
+                        _VPWriter.AddScore(vicPoint, currentPlayerIndex);
                     }
                     return;
                 }
