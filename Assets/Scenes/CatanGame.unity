@@ -25044,6 +25044,7 @@ MonoBehaviour:
   - {fileID: 2968696031703932721, guid: 31da1a128ecc16e4abfc9fdb0e5bd34f, type: 3}
   - {fileID: 2968696031703932721, guid: 2b56c396408b4c346ba674de1de76c62, type: 3}
   - {fileID: 2968696031703932721, guid: 6f37e3ba4c463524caef124b6a9c9cfe, type: 3}
+  playerController: {fileID: 9181162569621528363, guid: 97d535814c274d847b19fd9ba6975eb7, type: 3}
 --- !u!114 &1320420663
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25060,6 +25061,7 @@ MonoBehaviour:
   toTrade: {fileID: 377319745}
   cardsValue: 0
   getRes: {fileID: 1320420659}
+  playerController: {fileID: 9181162569621528363, guid: 97d535814c274d847b19fd9ba6975eb7, type: 3}
 --- !u!1 &1322199014
 GameObject:
   m_ObjectHideFlags: 0

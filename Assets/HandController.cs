@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class HandController : MonoBehaviour
 {
     public GameObject hand;
@@ -37,38 +38,29 @@ public class HandController : MonoBehaviour
                             resourceCounter++;
                         }
                     }
-                    if(resourceCounter >= 3) {
+                    if(resourceCounter >= 4) {
                         toTrade.CountedResources(childName);
                     } else {
                         toTrade.CountedResources("Nothing");
                     }
                     counted.Add(childName);
-
-
                 }
             }
         }
     }
 
-    public void EnableTransaction(string resourceName, int resourceIndex, bool enable) {
-        if (enable) {
-            GiveToBank(resourceName);
-            getRes.TakeResources(1, resourceIndex);
-        }
-        enable = false;
-    }
+    
 
     public void GiveToBank(string resourceName) {
         GameObject resourceInHand;
         int numberToDiscard = 4;
         int discarded = 0;
         for(int i = 0; i < hand.transform.childCount; i++) {
-            if(discarded < numberToDiscard) {
-                resourceInHand = hand.transform.GetChild(i).gameObject;
-                if(resourceName == resourceInHand.name) {
-                    Destroy(resourceInHand);
-                    discarded++;
-                }
+            resourceInHand = hand.transform.GetChild(i).gameObject;
+            if(resourceName == resourceInHand.name) {
+                Destroy(resourceInHand);
+                discarded++;
+                return;
             }
         } 
     }
