@@ -19,6 +19,6 @@ public class GetResources : MonoBehaviour
             GameObject newResource = Instantiate(resources[indexOfResource]);
             newResource.transform.SetParent(hand.transform);
         }
-    } 
+    }
 
 }
