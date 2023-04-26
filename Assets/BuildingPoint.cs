@@ -39,7 +39,7 @@ public class BuildingPoint : MonoBehaviour
     }
     
     public List<GameObject> GetAdjacentTiles() {
-        Debug.Log(_adjacentTiles.Count);
+        // Debug.Log(_adjacentTiles.Count);
         return _adjacentTiles;
     }
 

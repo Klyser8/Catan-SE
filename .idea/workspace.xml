@@ -5,7 +5,313 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="24333dbe-e3a9-4442-8e59-6d338000a108" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/Materials.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/Materials/body1.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/Materials/body1.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/Materials/handsarmormat.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/Materials/handsarmormat.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/Materials/headmat.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/Materials/headmat.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/Materials/helmmat.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/Materials/helmmat.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/Materials/lambert2.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/Materials/lambert2.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/Materials/leggsmat.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/Materials/leggsmat.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/Materials/phong12.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/Materials/phong12.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/Materials/phong13.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/Materials/phong13.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/Materials/phong15.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/Materials/phong15.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/Materials/shouldersmat.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/Materials/shouldersmat.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/idle2.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/idle2.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/jump.anim" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/jump.anim.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@atack1.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@atack1.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@atack10.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@atack10.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@atack11.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@atack11.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@atack12.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@atack12.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@atack13.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@atack13.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@atack14.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@atack14.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@atack15.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@atack15.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@atack16.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@atack16.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@atack17.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@atack17.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@atack18.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@atack18.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@atack19.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@atack19.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@atack2.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@atack2.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@atack20.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@atack20.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@atack21.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@atack21.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@atack22.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@atack22.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@atack23.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@atack23.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@atack24.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@atack24.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@atack25.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@atack25.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@atack26.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@atack26.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@atack3.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@atack3.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@atack4.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@atack4.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@atack5.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@atack5.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@atack6.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@atack6.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@atack7.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@atack7.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@atack8.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@atack8.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@atack9.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@atack9.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@backwalkshield.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@backwalkshield.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@death1.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@death1.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@death2.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@death2.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@death3.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@death3.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@death4.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@death4.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@dodge.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@dodge.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@gethit.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@gethit.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@idle1.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@idle1.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@idle2.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@idle2.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@idle3.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@idle3.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@idle4.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@idle4.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@idle5.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@idle5.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@jump.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@jump.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@run.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@run.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@run2.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@run2.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@run3.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@run3.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@sneakcrunchback.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@sneakcrunchback.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@sneakwalk (2).fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@sneakwalk (2).fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@sneakwalk.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@sneakwalk.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@strafeleft.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@strafeleft.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@straferight.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@straferight.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@walk.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@walk.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@walk3.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@walk3.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@walkshield.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Animation/orkassasin@walkshield.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Base mesh.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Base mesh/Base mesh.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Base mesh/Base mesh.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Base mesh/Materials.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Base mesh/Materials/body1.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Base mesh/Materials/body1.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Base mesh/Materials/handsarmormat.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Base mesh/Materials/handsarmormat.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Base mesh/Materials/headmat.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Base mesh/Materials/headmat.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Base mesh/Materials/helmmat.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Base mesh/Materials/helmmat.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Base mesh/Materials/lambert2.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Base mesh/Materials/lambert2.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Base mesh/Materials/leggsmat.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Base mesh/Materials/leggsmat.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Base mesh/Materials/phong12.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Base mesh/Materials/phong12.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Base mesh/Materials/phong13.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Base mesh/Materials/phong13.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Base mesh/Materials/phong15.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Base mesh/Materials/phong15.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Base mesh/Materials/shouldersmat.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Base mesh/Materials/shouldersmat.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Material.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Material/Standard_Two_Sided .shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Material/Standard_Two_Sided .shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Material/accesories.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Material/accesories.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Material/armor.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Material/armor.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Material/body.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Material/body.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Material/botleglass.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Material/botleglass.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Material/hands.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Material/hands.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Material/head.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Material/head.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Material/helm.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Material/helm.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Material/leegs.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Material/leegs.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Material/shoulders.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Material/shoulders.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Material/toga.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Material/toga.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Material/weapon.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Material/weapon.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/New Animator Controller.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/New Animator Controller.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Albedo.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Albedo.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Armor_Albedo.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Armor_Albedo.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Armor_Metallic.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Armor_Metallic.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Armor_Normal.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Armor_Normal.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Armor_Occlusion.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Armor_Occlusion.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Body_Albedo.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Body_Albedo.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Body_Metallic.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Body_Metallic.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Body_Normal.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Body_Normal.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Body_Occlusion.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Body_Occlusion.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Head_Albedo.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Head_Albedo.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Head_Emission.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Head_Emission.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Head_Metallic.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Head_Metallic.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Head_Normal.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Head_Normal.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Head_Occlusion.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Head_Occlusion.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Helm_Albedo.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Helm_Albedo.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Helm_Metallic.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Helm_Metallic.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Helm_Normal.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Helm_Normal.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Helm_Occlusion.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Helm_Occlusion.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Leggs_Albedo.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Leggs_Albedo.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Leggs_Metallic.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Leggs_Metallic.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Leggs_Normal.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Leggs_Normal.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Leggs_Occlusion.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Leggs_Occlusion.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Metallic.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Metallic.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Normal.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Normal.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Occlusion.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Occlusion.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Shoulders_Albedo.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Shoulders_Albedo.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Shoulders_Metallic.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Shoulders_Metallic.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Shoulders_Normal.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Shoulders_Normal.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Shoulders_Occlusion.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Shoulders_Occlusion.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Toga_Albedo.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Toga_Albedo.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Toga_Metallic.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Toga_Metallic.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Toga_Normal.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Toga_Normal.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Toga_Occlusion.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_Toga_Occlusion.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_dirk_Albedo.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_dirk_Albedo.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_dirk_Metallic.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_dirk_Metallic.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_dirk_Normal.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_dirk_Normal.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_dirk_Occlusion.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_dirk_Occlusion.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_hands_Albedo.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_hands_Albedo.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_hands_Metallic.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_hands_Metallic.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_hands_Normal.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_hands_Normal.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_hands_Occlusion.tga" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/Texture/1_hands_Occlusion.tga.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/orkAssasin.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/orkAssasin.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/orkAssasinSettings.lighting" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/orkAssasinSettings.lighting.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/prefab/OrkAssasin.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/prefab/OrkAssasin.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/stand.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/stand/Materials.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/stand/Materials/Cylinder001Mat.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/stand/Materials/Cylinder001Mat.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/stand/Stand.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Orkassasin/stand/Stand.obj.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Robbery.controller" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/Robbery.controller.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/PrefabHighpoly/Robbery.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/PrefabHighpoly/Robbery.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/RobberyController.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/RobberyController.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Catan-SE/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Catan-SE/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/HandController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/HandController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrefabHighpoly/Numbers/Number 10.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrefabHighpoly/Numbers/Number 10.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrefabHighpoly/Numbers/Number 11.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrefabHighpoly/Numbers/Number 11.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrefabHighpoly/Numbers/Number 12 .prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrefabHighpoly/Numbers/Number 12 .prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrefabHighpoly/Numbers/Number 2.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrefabHighpoly/Numbers/Number 2.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrefabHighpoly/Numbers/Number 3.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrefabHighpoly/Numbers/Number 3.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrefabHighpoly/Numbers/Number 4.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrefabHighpoly/Numbers/Number 4.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrefabHighpoly/Numbers/Number 5.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrefabHighpoly/Numbers/Number 5.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrefabHighpoly/Numbers/Number 6.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrefabHighpoly/Numbers/Number 6.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrefabHighpoly/Numbers/Number 8.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrefabHighpoly/Numbers/Number 8.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrefabHighpoly/Numbers/Number 9.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrefabHighpoly/Numbers/Number 9.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrefabHighpoly/Tiles/Desert 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrefabHighpoly/Tiles/Desert 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrefabHighpoly/Tiles/Rock.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrefabHighpoly/Tiles/Rock.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrefabHighpoly/Tiles/Sheep 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrefabHighpoly/Tiles/Sheep 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrefabHighpoly/Tiles/clay HighPoly.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrefabHighpoly/Tiles/clay HighPoly.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrefabHighpoly/Tiles/tree 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrefabHighpoly/Tiles/tree 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/PrefabHighpoly/Tiles/weed 1.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrefabHighpoly/Tiles/weed 1.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/CatanGame.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CatanGame.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BoardGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BoardGenerator.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BuildHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BuildHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/ResourceHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/ResourceHandler.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TradePlayerResources.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TradePlayerResources.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -2228,6 +2228,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7c3bb597e9f4419469099387cb898cc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robbery: {fileID: 0}
+  targetCoordinates: {x: 0, y: 0, z: 0}
+  lastCoordinates: {x: 0, y: 0, z: 0}
+  rotationSpeed: 2
+  movementSpeed: 5
+  canMove: 0
 --- !u!4 &114838700
 Transform:
   m_ObjectHideFlags: 0
@@ -2242,7 +2248,7 @@ Transform:
   m_Children:
   - {fileID: 1704561507}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &121955841
 GameObject:
@@ -2273,23 +2279,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5833e76603af4e74ebad8824e26b25f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forestTile: {fileID: 4311266128856915823, guid: 2e572697db3f9f44ba83b8b8004cc30c, type: 3}
-  hayTile: {fileID: 3492692204256812023, guid: 0df2fd4b0c9fe0e4c97bfb2e87ba8820, type: 3}
-  fieldTile: {fileID: 7564579194112239642, guid: 2484e15f9fcb42c4db218e2d08a2ae15, type: 3}
-  clayTile: {fileID: 5407126592580760070, guid: 76b22a8300578664a9a0c2fb90cfb345, type: 3}
-  oreTile: {fileID: 1661031422001303004, guid: 7d3f453ebc65d5743a2b44d9558e21dd, type: 3}
-  desertTile: {fileID: 7775786963323504909, guid: fc79dc6dceee07c40a58293c54b1e4e8, type: 3}
-  two: {fileID: 1814257246254211055, guid: e2331d94610e220439ec9bd82a646038, type: 3}
-  three: {fileID: 316488865780653404, guid: 6b688ddb5eaffb443adb868c89762754, type: 3}
-  four: {fileID: 2494489043395528416, guid: eed3e55368b471546b551d96b842a18b, type: 3}
-  five: {fileID: 1179147596473290131, guid: 8459905a3c07684459327ecaeee55dce, type: 3}
-  six: {fileID: 5171420762909714787, guid: af90815240137dd4f9539f071ee01064, type: 3}
-  eight: {fileID: 8252274562120798243, guid: def82dfdc5572384fbec306f741d185a, type: 3}
-  nine: {fileID: 8678348712145294813, guid: 5b7b4dbd219d6c041968a9a735bb1f24, type: 3}
-  ten: {fileID: 4605336652185756609, guid: 7ecb780cf9480684da7e8dc58dcb7b48, type: 3}
-  eleven: {fileID: 7697065928949435733, guid: 8b49c4ecdacfcb6498bf722835cf8ead, type: 3}
-  twelve: {fileID: 1943721384128768282, guid: e84462f48d4d63d4a99cc2db6dd546d3, type: 3}
+  tilePrefabs:
+  - tilePrefab: {fileID: 5407126592580760070, guid: 76b22a8300578664a9a0c2fb90cfb345, type: 3}
+    count: 3
+  - tilePrefab: {fileID: 1661031422001303004, guid: 7d3f453ebc65d5743a2b44d9558e21dd, type: 3}
+    count: 3
+  - tilePrefab: {fileID: 4311266128856915823, guid: 2e572697db3f9f44ba83b8b8004cc30c, type: 3}
+    count: 4
+  - tilePrefab: {fileID: 3492692204256812023, guid: 0df2fd4b0c9fe0e4c97bfb2e87ba8820, type: 3}
+    count: 4
+  - tilePrefab: {fileID: 7564579194112239642, guid: 2484e15f9fcb42c4db218e2d08a2ae15, type: 3}
+    count: 4
+  - tilePrefab: {fileID: 7775786963323504909, guid: fc79dc6dceee07c40a58293c54b1e4e8, type: 3}
+    count: 1
+  numberPrefabs:
+  - numberPrefab: {fileID: 1814257246254211055, guid: 3d29999af9a631043bf68d7d39e1947e, type: 3}
+    count: 1
+  - numberPrefab: {fileID: 316488865780653404, guid: 8e1452b8748bac642a97f6bed3578763, type: 3}
+    count: 2
+  - numberPrefab: {fileID: 2494489043395528416, guid: 56032b5c86338714fbd62c91e3b52afc, type: 3}
+    count: 2
+  - numberPrefab: {fileID: 1179147596473290131, guid: 7f0215e3378b828449fb701d972793f6, type: 3}
+    count: 2
+  - numberPrefab: {fileID: 5171420762909714787, guid: aa7580c26004dc847a6ffc11e07cee91, type: 3}
+    count: 2
+  - numberPrefab: {fileID: 8252274562120798243, guid: 899a230a8a6be034d8d75982d7475d3b, type: 3}
+    count: 2
+  - numberPrefab: {fileID: 8678348712145294813, guid: 6ccaa15cf3c2cc14881ee357b50faa37, type: 3}
+    count: 2
+  - numberPrefab: {fileID: 4605336652185756609, guid: 91983f6919d510147b2ef51b9ac7595b, type: 3}
+    count: 2
+  - numberPrefab: {fileID: 7697065928949435733, guid: 6dcdb6d6325e5d54cbad039e2cbf6dbe, type: 3}
+    count: 2
+  - numberPrefab: {fileID: 1943721384128768282, guid: d91d3f55a40e22742a0a755cf680dd43, type: 3}
+    count: 1
   buildingPointsHolder: {fileID: 1084615893}
+  desertTile: {fileID: 7775786963323504909, guid: fc79dc6dceee07c40a58293c54b1e4e8, type: 3}
 --- !u!4 &121955843
 Transform:
   m_ObjectHideFlags: 0
@@ -7808,6 +7833,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 1041414720579171163, guid: 97d535814c274d847b19fd9ba6975eb7, type: 3}
   playerCount: 4
+  colorMaterials:
+  - {fileID: 2100000, guid: f03a80858aed9fa4786445ff8d1a3300, type: 2}
+  - {fileID: 2100000, guid: 9fd5cf10af7ab3245aa1eab65697ce15, type: 2}
+  - {fileID: 2100000, guid: decbd5a1cd40cf644821d6465f5b1b52, type: 2}
+  - {fileID: 2100000, guid: 42a414b8deb5a7b47b6155a243514ad9, type: 2}
 --- !u!4 &440083179
 Transform:
   m_ObjectHideFlags: 0
@@ -15837,55 +15867,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 793487383}
   m_CullTransparentMesh: 1
---- !u!1 &795001137
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 795001139}
-  - component: {fileID: 795001138}
-  m_Layer: 0
-  m_Name: ColorManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &795001138
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 795001137}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 962042f40383bf744bb3660af085d4ea, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerMaterials:
-  - {fileID: 2100000, guid: f03a80858aed9fa4786445ff8d1a3300, type: 2}
-  - {fileID: 2100000, guid: 9fd5cf10af7ab3245aa1eab65697ce15, type: 2}
-  - {fileID: 2100000, guid: decbd5a1cd40cf644821d6465f5b1b52, type: 2}
-  - {fileID: 2100000, guid: 42a414b8deb5a7b47b6155a243514ad9, type: 2}
---- !u!4 &795001139
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 795001137}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.27473906, y: -0.20144469, z: 0.022512047}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &801917592
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22612,11 +22593,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74edf370fc918374988f98b68eb16f1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  players:
-  - {fileID: 785335925}
-  - {fileID: 721964342}
-  - {fileID: 1633408329}
-  - {fileID: 1396354171}
 --- !u!4 &1191984504 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a2c870c958ea5b242b60b3741a00e745, type: 3}
@@ -30764,13 +30740,9 @@ MonoBehaviour:
     m_Bits: 128
   settlement: {fileID: 7383020439357558033, guid: 822f19b8df4c94c46a66fa08d2f6c63e, type: 3}
   city: {fileID: 4061270665596298065, guid: 43923b4957f307643a39d3abc42408a8, type: 3}
-  currentPlayerIndex: 3
   settlementBuildingData: {fileID: 11400000, guid: b677bdb12f1683b4aba02ee9387b71fc, type: 2}
   cityBuildingData: {fileID: 11400000, guid: 92c3bfcfe737cb042b3db4a9a94e99a5, type: 2}
   roadBuildingData: {fileID: 11400000, guid: fb08a429a56a2ff4b98eec8265e21894, type: 2}
-  roadHandler: {fileID: 516643187}
-  colorManager: {fileID: 795001138}
-  _VPWriter: {fileID: 1186158087}
 --- !u!4 &1636261815
 Transform:
   m_ObjectHideFlags: 0
@@ -42691,23 +42663,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5833e76603af4e74ebad8824e26b25f9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forestTile: {fileID: 4311266128856915823, guid: b8ae798d1102eed41a583ef6d749878b, type: 3}
-  hayTile: {fileID: 3492692204256812023, guid: e64c0ae61dadfb541a2afd6774ea3c7a, type: 3}
-  fieldTile: {fileID: 7564579194112239642, guid: 788baf393cce99743bac9e0eb4b6ea8c, type: 3}
-  clayTile: {fileID: 5407126592580760070, guid: 00123629298c8664f897a0b70b91d7aa, type: 3}
-  oreTile: {fileID: 1661031422001303004, guid: f58a3c6b092f64745a3a23ce023428ca, type: 3}
-  desertTile: {fileID: 7775786963323504909, guid: fff1092543d929441b363e8d11866c77, type: 3}
-  two: {fileID: 1814257246254211055, guid: e2331d94610e220439ec9bd82a646038, type: 3}
-  three: {fileID: 316488865780653404, guid: 6b688ddb5eaffb443adb868c89762754, type: 3}
-  four: {fileID: 2494489043395528416, guid: eed3e55368b471546b551d96b842a18b, type: 3}
-  five: {fileID: 1179147596473290131, guid: 8459905a3c07684459327ecaeee55dce, type: 3}
-  six: {fileID: 5171420762909714787, guid: af90815240137dd4f9539f071ee01064, type: 3}
-  eight: {fileID: 8252274562120798243, guid: def82dfdc5572384fbec306f741d185a, type: 3}
-  nine: {fileID: 8678348712145294813, guid: 5b7b4dbd219d6c041968a9a735bb1f24, type: 3}
-  ten: {fileID: 4605336652185756609, guid: 7ecb780cf9480684da7e8dc58dcb7b48, type: 3}
-  eleven: {fileID: 7697065928949435733, guid: 8b49c4ecdacfcb6498bf722835cf8ead, type: 3}
-  twelve: {fileID: 1943721384128768282, guid: e84462f48d4d63d4a99cc2db6dd546d3, type: 3}
+  tilePrefabs: []
+  numberPrefabs: []
   buildingPointsHolder: {fileID: 0}
+  desertTile: {fileID: 7775786963323504909, guid: fff1092543d929441b363e8d11866c77, type: 3}
 --- !u!4 &3701199452297863488
 Transform:
   m_ObjectHideFlags: 0

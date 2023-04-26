@@ -171,7 +171,7 @@ public class GameManager : MonoBehaviour
      */
     public void CollectResources()
     {
-        foreach (var player in _playerManager.getPlayers())
+        foreach (var player in _playerManager.GetPlayers())
         {
             foreach (var building in player.GetBuildings())
             {

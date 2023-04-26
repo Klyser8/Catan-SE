@@ -45,41 +45,51 @@ public class PlayerManager : MonoBehaviour
      */
     public bool AdvanceTurn()
     {
+        Debug.Log("current index: " + _currentPlayerId);
+        bool endOfRound = false;
+
         if (_gameManager.GetGameState() == GameState.InitialPlacement)
         {
             if (_gameManager.GetCurrentRound() == -1)
             {
                 _currentPlayerId++;
-                if (_currentPlayerId == 3)
+
+                if (_currentPlayerId >= playerCount)
                 {
-                    return true;
+                    _currentPlayerId = playerCount - 1;
+                    endOfRound = true;
                 }
-            } else if (_gameManager.GetCurrentRound() == 0)
+            }
+            else if (_gameManager.GetCurrentRound() == 0)
             {
                 _currentPlayerId--;
-                if (_currentPlayerId == 0)
+
+                if (_currentPlayerId < 0)
                 {
-                    return true;
+                    _currentPlayerId = 0;
+                    endOfRound = true;
                 }
             }
         }
         else
         {
             _currentPlayerId++;
+
             // If we've reached the end of the list, loop back to the beginning
             if (_currentPlayerId >= playerCount)
             {
                 _currentPlayerId = 0;
-                return true;
+                endOfRound = true;
             }
         }
-        return false;
+
+        return endOfRound;
     }
     
     /**
      * Returns a list of all player controllers
      */
-    public List<PlayerController> getPlayers()
+    public List<PlayerController> GetPlayers()
     {
         return _playerControllers;
     }
