@@ -10,11 +10,14 @@ public class BuildHandler : MonoBehaviour
     public Camera cam;
     public LayerMask point;
     public LayerMask roadPoint;
+    public LayerMask tileTarget;
 
     public GameObject settlement;
     public GameObject city;
 
     public int currentPlayerIndex = 1;
+
+    public RobberyController robbery;
     
 
     // [SerializeField] private Transform settlementHolder;
@@ -56,14 +59,17 @@ public class BuildHandler : MonoBehaviour
                 Debug.Log(hit.collider.gameObject.name);
             }
             if (Physics.Raycast(ray, out hit, 100, roadPoint)) 
+            {
+                if(hit.transform.GetComponent<RoadBuilder>().canBuild) 
                 {
-                    
-                    if(hit.transform.GetComponent<RoadBuilder>().canBuild) 
-                    {
-                        Debug.Log(hit.collider.gameObject.name + " Again");
-                        roadHandler.BuildRoad(hit.transform.position, hit.transform.rotation);
-                    }
+                    Debug.Log(hit.collider.gameObject.name + " Again");
+                    roadHandler.BuildRoad(hit.transform.position, hit.transform.rotation);
                 }
+            }
+
+            if(Physics.Raycast(ray, out hit, 100, tileTarget)) {
+                robbery.ReceiveCoordinates(hit.transform.position);
+            }
 
             if (Physics.Raycast(ray, out hit, 100, point))
             {   
@@ -90,10 +96,7 @@ public class BuildHandler : MonoBehaviour
                     return;
                 }
             } 
-            
-            
         }
-        
     }
 
     /**

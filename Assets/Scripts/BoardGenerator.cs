@@ -26,6 +26,8 @@ public class BoardGenerator : MonoBehaviour
 
     private Vector3 desertPos;
 
+    public RobberyController robbery;
+
     [SerializeField] private Transform buildingPointsHolder;
     
     private ArrayList _tilePositions = new()
@@ -136,6 +138,7 @@ public class BoardGenerator : MonoBehaviour
             {
                 var tilePos = (Vector3)_tilePositions[Random.Range(0, _tilePositions.Count)];
                 GameObject createdTile = CreateTile(tileType, tilePos);
+            
                 _tilePositions.Remove(tilePos); // Remove the position from the list
 
                 if (tileType != desertTile)

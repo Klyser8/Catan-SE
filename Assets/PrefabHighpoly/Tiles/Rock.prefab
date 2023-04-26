@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2037592870442375014}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Rock
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31,7 +31,7 @@ Transform:
   - {fileID: 1024025099148294276}
   - {fileID: 8284751341619266462}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2008929537970113505
 GameObject:
@@ -44,7 +44,8 @@ GameObject:
   - component: {fileID: 1024025099148294276}
   - component: {fileID: 2160896478667479549}
   - component: {fileID: 6397227308784391427}
-  m_Layer: 0
+  - component: {fileID: 4487979011933439526}
+  m_Layer: 9
   m_Name: HoneyComb.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,6 +117,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &4487979011933439526
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2008929537970113505}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 6642149115374435245, guid: 855366331a28d6a4c8133efe5763ca8b, type: 3}
 --- !u!1 &3586813408221085456
 GameObject:
   m_ObjectHideFlags: 0
@@ -127,7 +142,8 @@ GameObject:
   - component: {fileID: 8284751341619266462}
   - component: {fileID: 3140764139031345379}
   - component: {fileID: 4778122965786385243}
-  m_Layer: 0
+  - component: {fileID: 8168654158022936801}
+  m_Layer: 9
   m_Name: Landscape.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -199,3 +215,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &8168654158022936801
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3586813408221085456}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: -7453770956514601984, guid: 855366331a28d6a4c8133efe5763ca8b, type: 3}
