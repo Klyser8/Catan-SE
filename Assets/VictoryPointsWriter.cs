@@ -26,8 +26,8 @@ public class VictoryPointsWriter : MonoBehaviour
         foreach (var player in _playerManager.GetPlayers())
         {
             int victoryPoints = player.GetVictoryPoints();
-            Debug.Log("something: " + player.GetComponentInChildren<TextMeshProUGUI>());
-            player.GetComponentInChildren<TextMeshProUGUI>().text = victoryPoints.ToString();
+            // Debug.Log("something: " + player.GetComponentInChildren<TextMeshProUGUI>());
+            // player.GetComponentInChildren<TextMeshProUGUI>().text = victoryPoints.ToString();
         }
     }
 }

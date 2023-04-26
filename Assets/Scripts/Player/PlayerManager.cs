@@ -45,7 +45,6 @@ public class PlayerManager : MonoBehaviour
      */
     public bool AdvanceTurn()
     {
-        Debug.Log("current index: " + _currentPlayerId);
         bool endOfRound = false;
 
         if (_gameManager.GetGameState() == GameState.InitialPlacement)

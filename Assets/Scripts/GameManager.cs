@@ -38,6 +38,10 @@ public class GameManager : MonoBehaviour
                     Debug.Log("Round " + _roundCounter + " is over");
                 } //TODO refactor this code in a method
                 Debug.Log("Round " + _roundCounter + ": "+ _playerManager.GetCurrentPlayer() + " is starting their turn");
+                if (_roundCounter == 1)
+                {
+                    SwitchState(GameState.WaitingForRoll);
+                }
             }
             break;
         
