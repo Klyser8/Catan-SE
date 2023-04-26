@@ -5,6 +5,8 @@ using UnityEngine.EventSystems;
 
 public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointerExitHandler
 {
+    public GameObject newParent;
+
     public void OnPointerEnter(PointerEventData eventData) {
         // Debug.Log("OnPointerEnter");
     }
@@ -18,7 +20,8 @@ public class DropZone : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPoin
 
         DragDropDevCard d = eventData.pointerDrag.GetComponent<DragDropDevCard>();
         if(d != null) {
-            d.initialParent = this.transform;
+            d.initialParent = newParent.transform;
+
         }
     }
 }
