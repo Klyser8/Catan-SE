@@ -1,35 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
+using Player;
 using UnityEngine;
 using TMPro;
 
 public class VictoryPointsWriter : MonoBehaviour
 {
-    public GameObject[] players;
+    private PlayerManager _playerManager;
     // Start is called before the first frame update
     void Start()
     {
-        for(int i = 0; i < players.Length; i++) {
-            players[i].GetComponentInChildren<TextMeshProUGUI>().text = "0";
-        }
+        _playerManager = FindObjectOfType<PlayerManager>();
+        UpdateVictoryPointsText();
+    }
+    
+    public void AddScore(int score, int playerIndex)
+    {
+        _playerManager.getPlayers()[playerIndex].AddVictoryPoints(score);
+        UpdateVictoryPointsText();
     }
 
-    public void AddScore(float score, int playerIndex)
+    private void UpdateVictoryPointsText()
     {
-        string currentScore = players[playerIndex].GetComponentInChildren<TextMeshProUGUI>().text;
-        float lastScore;
-        bool success = float.TryParse(currentScore, out lastScore);
-
-        if (success)
+        foreach (var player in _playerManager.getPlayers())
         {
-            float newScore = lastScore + score;
-            Debug.Log(newScore);
-            // Update the TextMeshProUGUI with the new score
-            players[playerIndex].GetComponentInChildren<TextMeshProUGUI>().text = newScore.ToString();
-        }
-        else
-        {
-            Debug.LogError("Failed to parse current score to float.");
+            int victoryPoints = player.GetVictoryPoints();
+            player.GetComponentInChildren<TextMeshProUGUI>().text = victoryPoints.ToString();
         }
     }
 }

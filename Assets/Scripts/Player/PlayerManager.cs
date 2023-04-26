@@ -2,15 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using Player;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [DefaultExecutionOrder(-1)]
 public class PlayerManager : MonoBehaviour
 {
+    [SerializeField] private GameObject playerPrefab; // Assign the player prefab in the editor
+    [SerializeField] private int playerCount = 4;
+    [SerializeField] private List<Material> colorMaterials;
+    
     private GameManager _gameManager;
-    public GameObject playerPrefab; // Assign the player prefab in the editor
-    public int playerCount = 4;
     private List<PlayerController> _playerControllers = new();
-    private int _currentPlayer = 0;
+    private int _currentPlayerId;
 
     private ArrayList _playerPositions = new()
     {
@@ -29,6 +32,7 @@ public class PlayerManager : MonoBehaviour
             var player = Instantiate(playerPrefab, (Vector3) _playerPositions[i], Quaternion.identity);
             player.name = "Player " + (i + 1);
             PlayerController playerController = player.GetComponent<PlayerController>();
+            playerController.Initialize(colorMaterials[i]);
             _playerControllers.Add(playerController);
             player.transform.SetParent(transform, this);
         }
@@ -45,15 +49,15 @@ public class PlayerManager : MonoBehaviour
         {
             if (_gameManager.GetCurrentRound() == -1)
             {
-                _currentPlayer++;
-                if (_currentPlayer == 3)
+                _currentPlayerId++;
+                if (_currentPlayerId == 3)
                 {
                     return true;
                 }
             } else if (_gameManager.GetCurrentRound() == 0)
             {
-                _currentPlayer--;
-                if (_currentPlayer == 0)
+                _currentPlayerId--;
+                if (_currentPlayerId == 0)
                 {
                     return true;
                 }
@@ -61,11 +65,11 @@ public class PlayerManager : MonoBehaviour
         }
         else
         {
-            _currentPlayer++;
+            _currentPlayerId++;
             // If we've reached the end of the list, loop back to the beginning
-            if (_currentPlayer >= playerCount)
+            if (_currentPlayerId >= playerCount)
             {
-                _currentPlayer = 0;
+                _currentPlayerId = 0;
                 return true;
             }
         }
@@ -75,14 +79,19 @@ public class PlayerManager : MonoBehaviour
     /**
      * Returns a list of all player controllers
      */
-    public List<PlayerController> GetPlayerControllers()
+    public List<PlayerController> getPlayers()
     {
         return _playerControllers;
     }
     
     public PlayerController GetCurrentPlayer() 
     {
-        return _playerControllers[_currentPlayer];
+        return _playerControllers[_currentPlayerId];
+    }
+    
+    public int GetPlayerCount()
+    {
+        return playerCount;
     }
 
 }

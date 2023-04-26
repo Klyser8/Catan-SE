@@ -17,8 +17,7 @@ public class GetResources : MonoBehaviour
 
     public void TakeResources(int numberOfResources, int indexOfResource) {
         for (int i = 0; i < numberOfResources; i++) {
-            GameObject newResource = Instantiate(resources[indexOfResource]);
-            newResource.transform.SetParent(hand.transform);
+            GameObject newResource = Instantiate(resources[indexOfResource], hand.transform, true);
         }
     }
 }

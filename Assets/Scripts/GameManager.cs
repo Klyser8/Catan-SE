@@ -12,14 +12,12 @@ public class GameManager : MonoBehaviour
     private PlayerManager _playerManager;
     private DiceController _diceController;
     private GameState _gameState = GameState.GameStart;
-    private int _lastRoll = 0;
-    private PlayerController _currentPlayer;
     private int _roundCounter = -1;
     private void Start()
     {
         _playerManager = FindObjectOfType<PlayerManager>();
         _diceController = FindObjectOfType<DiceController>();
-        Debug.Log("Number of players found: " + _playerManager.playerCount);
+        Debug.Log("Number of players found: " + _playerManager.GetPlayerCount());
     }
 
     private void Update()
@@ -29,7 +27,6 @@ public class GameManager : MonoBehaviour
         case GameState.GameStart:
             Debug.Log("Game start");
             SwitchState(GameState.InitialPlacement);
-            _currentPlayer = _playerManager.GetCurrentPlayer();
             break;
         
         case GameState.InitialPlacement:
@@ -40,8 +37,7 @@ public class GameManager : MonoBehaviour
                     _roundCounter++;
                     Debug.Log("Round " + _roundCounter + " is over");
                 } //TODO refactor this code in a method
-                _currentPlayer = _playerManager.GetCurrentPlayer();
-                Debug.Log("Round " + _roundCounter + ": "+ _currentPlayer + " is starting their turn");
+                Debug.Log("Round " + _roundCounter + ": "+ _playerManager.GetCurrentPlayer() + " is starting their turn");
             }
             break;
         
@@ -54,8 +50,8 @@ public class GameManager : MonoBehaviour
         
         case GameState.Rolling:
             _diceController.RollDice();
-            Debug.Log(_currentPlayer + " rolled a " + _lastRoll);
-            if (_lastRoll != 7)
+            Debug.Log(_playerManager.GetCurrentPlayer() + " rolled a " + _diceController.GetLastRoll());
+            if (_diceController.GetLastRoll() != 7)
                 SwitchState(GameState.HarvestingResources);
             else
                 SwitchState(GameState.MovingRobber);
@@ -68,7 +64,7 @@ public class GameManager : MonoBehaviour
             break;
         
         case GameState.MovingRobber:
-            Debug.Log(_currentPlayer + " is moving the robber");
+            Debug.Log(_playerManager.GetCurrentPlayer() + " is moving the robber");
             //TODO: Move the robber and steal resources from a player
             SwitchState(GameState.WaitingForAction);
             break;
@@ -78,30 +74,30 @@ public class GameManager : MonoBehaviour
             break;
         
         case GameState.Building:
-            Debug.Log(_currentPlayer + " is building");
+            Debug.Log(_playerManager.GetCurrentPlayer() + " is building");
             SwitchState(GameState.WaitingForAction);
             break;
         
         case GameState.Trading:
-            Debug.Log(_currentPlayer + " is trading");
+            Debug.Log(_playerManager.GetCurrentPlayer() + " is trading");
             SwitchState(GameState.WaitingForAction);
             break;
         
         case GameState.BuyingDevelopmentCard:
-            Debug.Log(_currentPlayer + " is buying a development card");
+            Debug.Log(_playerManager.GetCurrentPlayer() + " is buying a development card");
             SwitchState(GameState.WaitingForAction);
             break;
         
         case GameState.PlayingDevelopmentCard:
-            Debug.Log(_currentPlayer + " is playing a development card");
+            Debug.Log(_playerManager.GetCurrentPlayer() + " is playing a development card");
             SwitchState(GameState.WaitingForAction);
             break;
 
         case GameState.EndTurn:
-            Debug.Log(_currentPlayer + " is ending their turn");
-            if (_currentPlayer.GetVictoryPoints() >= 10)
+            Debug.Log(_playerManager.GetCurrentPlayer() + " is ending their turn");
+            if (_playerManager.GetCurrentPlayer().GetVictoryPoints() >= 10)
             {
-                Debug.Log(_currentPlayer + " has won the game!");
+                Debug.Log(_playerManager.GetCurrentPlayer() + " has won the game!");
                 SwitchState(GameState.EndGame);
             }
             if (_playerManager.AdvanceTurn())
@@ -109,8 +105,7 @@ public class GameManager : MonoBehaviour
                 _roundCounter++;
                 Debug.Log("Round " + _roundCounter + " is over");
             }
-            _currentPlayer = _playerManager.GetCurrentPlayer();
-            Debug.Log("Round " + _roundCounter + ": "+ _currentPlayer + " is starting their turn");
+            Debug.Log("Round " + _roundCounter + ": "+ _playerManager.GetCurrentPlayer() + " is starting their turn");
             if (_roundCounter > 0)
             {
                 SwitchState(GameState.WaitingForRoll);
@@ -176,7 +171,7 @@ public class GameManager : MonoBehaviour
      */
     public void CollectResources()
     {
-        foreach (var player in _playerManager.GetPlayerControllers())
+        foreach (var player in _playerManager.getPlayers())
         {
             foreach (var building in player.GetBuildings())
             {

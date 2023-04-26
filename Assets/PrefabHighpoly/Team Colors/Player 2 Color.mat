@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: OutlineFill 3
+  m_Name: Player 2 Color
   m_Shader: {fileID: 4800000, guid: 4e76d4023d7e0411297c670f878973e2, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -28,5 +28,5 @@ Material:
     - _OutlineWidth: 1.5
     - _ZTest: 2
     m_Colors:
-    - _OutlineColor: {r: 0.6792453, g: 0.6792453, b: 0.6792453, a: 1}
+    - _OutlineColor: {r: 0, g: 0.040914103, b: 0.5283019, a: 1}
   m_BuildTextureStacks: []

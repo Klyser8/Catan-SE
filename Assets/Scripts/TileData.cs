@@ -4,28 +4,17 @@ using UnityEngine;
 
 public class TileData : MonoBehaviour
 {
+    [SerializeField] private TileType tileType;
+    private NumberData _numberData;
     
-    private GameObject _number;
-    public TileType tileType;
-    
-    void Start()
+    public void Initialize(NumberData numberData)
     {
-        
+        _numberData = numberData;
     }
 
-    void Update()
+    public int GetNumber()
     {
-        
-    }
-    
-    public void SetNumber(GameObject number)
-    {
-        _number = number;
-    }
-    
-    public GameObject GetNumber()
-    {
-        return _number;
+        return _numberData.GetNumber();
     }
     
     public TileType GetTileType()

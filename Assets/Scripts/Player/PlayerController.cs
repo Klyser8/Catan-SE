@@ -6,17 +6,20 @@ namespace Player
 {
     public class PlayerController : MonoBehaviour
     {
-    
-        private GameManager _gameManager;
-        private int _victoryPoints = 0;
+        private Material _playerColor;
+        private int _victoryPoints;
         private ResourceHandler _resourceHandler;
         private ArrayList _buildings = new();
         private ArrayList _roads = new();
 
         void Start()
         {
-            _gameManager = FindObjectOfType<GameManager>();
             _resourceHandler = gameObject.AddComponent<ResourceHandler>();
+        }
+
+        public void Initialize(Material playerColor)
+        {
+            _playerColor = playerColor;
         }
 
         /**
@@ -43,6 +46,14 @@ namespace Player
             return _victoryPoints;
         }
         
+        /**
+         * Returns the player's color
+         */
+        public Material GetPlayerColor()
+        {
+            return _playerColor;
+        }
+
         /**
          * Adds a settlement to the player's list of buildings.
          */

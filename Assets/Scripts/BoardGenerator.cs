@@ -6,27 +6,11 @@ using UnityEngine.Serialization;
 
 public class BoardGenerator : MonoBehaviour
 {
-    public GameObject forestTile;
-    public GameObject hayTile;
-    public GameObject fieldTile;
-    public GameObject clayTile;
-    public GameObject oreTile;
-    public GameObject desertTile;
 
-    public GameObject two;
-    public GameObject three;
-    public GameObject four;
-    public GameObject five;
-    public GameObject six;
-    public GameObject eight;
-    public GameObject nine;
-    public GameObject ten;
-    public GameObject eleven;
-    public GameObject twelve;
-
-    private Vector3 desertPos;
-
+    [SerializeField] private List<TilePrefabData> tilePrefabs;
+    [SerializeField] private List<NumberPrefabData> numberPrefabs;
     [SerializeField] private Transform buildingPointsHolder;
+    [SerializeField] private GameObject desertTile;
     
     private ArrayList _tilePositions = new()
     {
@@ -56,45 +40,12 @@ public class BoardGenerator : MonoBehaviour
         new Vector3(0.866f, 0f, -1.5f),
     };
 
-    private ArrayList _numPositions = new()
-    {
-        //Middle row
-        new Vector3(0f, 0f, 0f),
-        new Vector3(0.866f, 0f, 0f),
-        new Vector3(1.732f, 0f, 0f),
-        new Vector3(-0.866f, 0f, 0f),
-        new Vector3(-1.732f, 0f, 0f),
-        //Left Row
-        new Vector3(-1.299f, 0f, 0.751f),
-        new Vector3(-0.433f, 0f, 0.751f),
-        new Vector3(0.433f, 0f, 0.751f),
-        new Vector3(1.299f, 0f, 0.751f),
-        //Right Row
-        new Vector3(-1.299f, 0f, -0.751f),
-        new Vector3(-0.433f, 0f, -0.751f),
-        new Vector3(0.433f, 0f, -0.751f),
-        new Vector3(1.299f, 0f, -0.751f),
-        //Left-Left Row
-        new Vector3(-0.866f, 0f, 1.499f),
-        new Vector3(0f, 0f, 1.499f),
-        new Vector3(0.866f, 0f, 1.499f),
-        //Right-Right Row
-        new Vector3(-0.866f, 0f, -1.5f),
-        new Vector3(-0f, 0f, -1.5f),
-        new Vector3(0.866f, 0f, -1.5f),
-    };
-    
     private Dictionary<Vector3, GameObject> _tileDictionary = new();
 
     void Start()
     {
         PopulateBoard();
         AssignAdjacentTilesToBuildingPoints();
-    }
-
-    void Update()
-    {
-        
     }
 
     /**
@@ -105,40 +56,18 @@ public class BoardGenerator : MonoBehaviour
      */
     private void PopulateBoard()
     {
-        Dictionary<GameObject, int> tiles = new Dictionary<GameObject, int>
-        {
-            { forestTile, 4 },
-            { hayTile, 4 },
-            { fieldTile, 4 },
-            { clayTile, 3 },
-            { oreTile, 3 },
-            { desertTile, 1 },
-        };
-        Dictionary<GameObject, int> numbers = new Dictionary<GameObject, int>
-        {
-            { two, 1 },
-            { three, 2 },
-            { four, 2 },
-            { five, 2 },
-            { six, 2 },
-            { eight, 2 },
-            { nine, 2 },
-            { ten, 2 },
-            { eleven, 2 },
-            { twelve, 1 },
-        };
 
         // Loop through each tile type
-        foreach (var tileType in tiles.Keys)
+        foreach (var tilePrefabData in tilePrefabs)
         {
             // Add each type of tile, as many times as specified in the Dictionary
-            for (int i = 0; i < tiles[tileType]; i++)
+            for (int i = 0; i < tilePrefabData.count; i++)
             {
                 var tilePos = (Vector3)_tilePositions[Random.Range(0, _tilePositions.Count)];
-                GameObject createdTile = CreateTile(tileType, tilePos);
+                GameObject createdTile = CreateTile(tilePrefabData.tilePrefab, tilePos);
                 _tilePositions.Remove(tilePos); // Remove the position from the list
 
-                if (tileType != desertTile)
+                if (tilePrefabData.tilePrefab != desertTile)
                 {
                     _tileDictionary[tilePos] = createdTile;
                 }
@@ -148,23 +77,23 @@ public class BoardGenerator : MonoBehaviour
         // Loop through each created tile (excluding desert tile)
         foreach (var tile in _tileDictionary.Values)
         {
-            // Get a random number, and remove it from the list of numbers/counts
-            int randomIndex = Random.Range(0, numbers.Count);
-            KeyValuePair<GameObject, int> randomPair = numbers.ElementAt(randomIndex);
-            numbers[randomPair.Key]--;
-
-            // Get TileData component from the tile and assign the number
-            var tileData = tile.GetComponent<TileData>();
-            tileData.SetNumber(randomPair.Key);
-
+            // Get a random numberPrefabData, and remove it from the list of numberPrefabs
+            int randomIndex = Random.Range(0, numberPrefabs.Count);
+            NumberPrefabData randomPair = numberPrefabs[randomIndex];
+            numberPrefabs[randomIndex].count--;
+            
             // Create the number token on top of the tile
             Vector3 numberPosition = tile.transform.position;
-            CreateTile(randomPair.Key, numberPosition);
+            GameObject createdNumber = CreateTile(randomPair.numberPrefab, numberPosition);
+            
+            // Get TileData component from the tile and assign the number
+            var tileData = tile.GetComponent<TileData>();
+            tileData.Initialize(createdNumber.GetComponent<NumberData>());
 
             // Remove the number token from the dictionary if its count reaches zero
-            if (numbers[randomPair.Key] == 0)
+            if (randomPair.count == 0)
             {
-                numbers.Remove(randomPair.Key);
+                numberPrefabs.RemoveAt(randomIndex);
             }
         }
     }
@@ -210,4 +139,18 @@ public class BoardGenerator : MonoBehaviour
         return _tileDictionary;
     }
 
+    [System.Serializable]
+    private class TilePrefabData
+    {
+        public GameObject tilePrefab;
+        public int count;
+    }
+
+    [System.Serializable]
+    private class NumberPrefabData
+    {
+        public GameObject numberPrefab;
+        public int count;
+    }
+    
 }

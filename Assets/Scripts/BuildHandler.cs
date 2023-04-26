@@ -7,36 +7,28 @@ using UnityEngine;
 
 public class BuildHandler : MonoBehaviour
 {
-    public Camera cam;
-    public LayerMask point;
-    public LayerMask roadPoint;
+    [SerializeField] private Camera cam;
+    [SerializeField] private LayerMask point;
+    [SerializeField] private LayerMask roadPoint;
+    [SerializeField] private GameObject settlement;
+    [SerializeField] private GameObject city;
 
-    public GameObject settlement;
-    public GameObject city;
-
-    public int currentPlayerIndex = 1;
-    
-
-    // [SerializeField] private Transform settlementHolder;
+    [SerializeField] private ActionData settlementBuildingData;
+    [SerializeField] private ActionData cityBuildingData;
+    [SerializeField] private ActionData roadBuildingData;
 
     private PlayerManager _playerManager;
     private GameManager _gameManager;
+    private RoadHandler _roadHandler;
+    private VictoryPointsWriter _vpWriter;
     // Start is called before the first frame update
     
-    public ActionData settlementBuildingData;
-    public ActionData cityBuildingData;
-    public ActionData roadBuildingData;
-
-    [SerializeField] private RoadHandler roadHandler;
-    [SerializeField] private ColorManager colorManager;
-    [SerializeField] private VictoryPointsWriter _VPWriter;
-    
-    private float vicPoint = 1;
-
     void Start()
     {
         _playerManager = FindObjectOfType<PlayerManager>();
         _gameManager = FindObjectOfType<GameManager>();
+        _roadHandler = FindObjectOfType<RoadHandler>();
+        _vpWriter = FindObjectOfType<VictoryPointsWriter>();
     }
 
     // Update is called once per frame
@@ -61,7 +53,7 @@ public class BuildHandler : MonoBehaviour
                     if(hit.transform.GetComponent<RoadBuilder>().canBuild) 
                     {
                         Debug.Log(hit.collider.gameObject.name + " Again");
-                        roadHandler.BuildRoad(hit.transform.position, hit.transform.rotation);
+                        _roadHandler.BuildRoad(hit.transform.position, hit.transform.rotation);
                     }
                 }
 
@@ -85,7 +77,7 @@ public class BuildHandler : MonoBehaviour
                             settlementData.sheepCost);
                         player.AddSettlement(settlement);
                         
-                        _VPWriter.AddScore(vicPoint, currentPlayerIndex);
+                        _vpWriter.AddScore(1, 1); //TODO replace with current player
                     }
                     return;
                 }
@@ -118,11 +110,35 @@ public class BuildHandler : MonoBehaviour
             Quaternion randomRotation = Quaternion.Euler(Vector3.up * randomAngle);
             Quaternion currentRotation = newBuilding.transform.rotation;
 
-        // Add the random rotation to the provided rotation
-            newBuilding.transform.rotation = currentRotation * randomRotation;
-            colorManager.SetColor(newBuilding, currentPlayerIndex);
+            SetBuildingColor(newBuilding, _playerManager.GetCurrentPlayer());
             return newBuilding;
         // }
-        return null;
+        // return null;
+    }
+    
+    public void SetBuildingColor(GameObject building, PlayerController player)
+    {
+        // Find the "Castle" child object
+        Transform settelmentChild = building.transform.Find("CatanHouseNew");
+        Transform settelmentGrandChild = settelmentChild.transform.Find("roof");
+        if (settelmentGrandChild != null)
+        {
+            // Assign the material based on the player's index
+            Renderer settlementRenderer = settelmentGrandChild.GetComponent<Renderer>();
+            if (settlementRenderer != null)
+            {
+                Material[] materials = settlementRenderer.materials;
+                materials[1] = player.GetPlayerColor();
+                settlementRenderer.materials = materials;
+            }
+            else
+            {
+                Debug.LogError("Invalid player index or missing Renderer component");
+            }
+        }
+        else
+        {
+            Debug.LogError("Settelment child object not found");
+        }
     }
 }

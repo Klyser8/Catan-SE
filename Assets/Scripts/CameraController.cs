@@ -6,17 +6,17 @@ using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {
-    public Transform target; // The center point to rotate around
-    public float distance = 10.0f; // The initial distance from the target
-    public float minDistance = 3.0f; // The minimum zoom distance
-    public float maxDistance = 8.0f; // The maximum zoom distance
-    public float zoomSpeed = 1.0f; // The speed of zooming in/out
-    public float rotationSpeed = 720.0f; // The speed of rotation
-    public float minYAngle = 30.0f;
-    public float maxYAngle = 90.0f;
+    [SerializeField] private Transform target; // The center point to rotate around
+    [SerializeField] private float distance = 10.0f; // The initial distance from the target
+    [SerializeField] private float minDistance = 3.0f; // The minimum zoom distance
+    [SerializeField] private float maxDistance = 8.0f; // The maximum zoom distance
+    [SerializeField] private float zoomSpeed = 1.0f; // The speed of zooming in/out
+    [SerializeField] private float rotationSpeed = 720.0f; // The speed of rotation
+    [SerializeField] private float minYAngle = 30.0f;
+    [SerializeField] private float maxYAngle = 90.0f;
 
-    private float _xRotation = 0.0f;
-    private float _yRotation = 0.0f;
+    private float _xRotation;
+    private float _yRotation;
 
     void Start()
     {

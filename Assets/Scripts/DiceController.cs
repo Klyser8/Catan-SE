@@ -7,42 +7,45 @@ public class DiceController : MonoBehaviour
     [SerializeField] private Vector3 spawnPosition;
     [SerializeField] private float rollForce;
 
-    private GameObject die1;
-    private GameObject die2;
-    private bool rolling;
+    private GameObject _die1;
+    private GameObject _die2;
+    private bool _rolling;
+    private int _lastRoll;
 
     public void RollDice()
     {
-        if (rolling) return;
+        if (_rolling) return;
 
-        if (die1 != null) Destroy(die1);
-        if (die2 != null) Destroy(die2);
+        if (_die1 != null) Destroy(_die1);
+        if (_die2 != null) Destroy(_die2);
 
-        die1 = Instantiate(diePrefab, spawnPosition + new Vector3(-0.25f, 0, -0.25f), Random.rotation);
-        die2 = Instantiate(diePrefab, spawnPosition + new Vector3(0.25f, 0, 0.25f), Random.rotation);
+        _die1 = Instantiate(diePrefab, spawnPosition + new Vector3(-0.25f, 0, -0.25f), Random.rotation);
+        _die2 = Instantiate(diePrefab, spawnPosition + new Vector3(0.25f, 0, 0.25f), Random.rotation);
         
-        die1.GetComponent<Rigidbody>().AddTorque(Random.insideUnitSphere * rollForce, ForceMode.Impulse);
-        die2.GetComponent<Rigidbody>().AddTorque(Random.insideUnitSphere * rollForce, ForceMode.Impulse);
+        _die1.GetComponent<Rigidbody>().AddTorque(Random.insideUnitSphere * rollForce, ForceMode.Impulse);
+        _die2.GetComponent<Rigidbody>().AddTorque(Random.insideUnitSphere * rollForce, ForceMode.Impulse);
 
-        rolling = true;
-        StartCoroutine(WaitForDiceToStopRolling());
+        _rolling = true;
+        StartCoroutine(WaitForDiceRoll());
     }
 
-    private IEnumerator WaitForDiceToStopRolling()
+    private IEnumerator WaitForDiceRoll()
     {
         yield return new WaitForSeconds(1f);
 
-        while (die1.GetComponent<Rigidbody>().velocity.magnitude > 0.1f || die2.GetComponent<Rigidbody>().velocity.magnitude > 0.1f)
+        while (_die1.GetComponent<Rigidbody>().velocity.magnitude > 0.1f ||
+               _die2.GetComponent<Rigidbody>().velocity.magnitude > 0.1f)
         {
             yield return null;
         }
 
-        int die1Value = GetDieValue(die1);
-        int die2Value = GetDieValue(die2);
+        int die1Value = GetDieValue(_die1);
+        int die2Value = GetDieValue(_die2);
 
-        rolling = false;
+        _rolling = false;
 
         Debug.Log("Dice results: " + die1Value + " and " + die2Value);
+        _lastRoll = die1Value + die2Value;
     }
 
     private int GetDieValue(GameObject die)
@@ -63,6 +66,11 @@ public class DiceController : MonoBehaviour
         }
 
         return value;
+    }
+    
+    public int GetLastRoll()
+    {
+        return _lastRoll;
     }
 
 }

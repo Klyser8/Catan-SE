@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class NumberData : MonoBehaviour
 {
-    public int number;
+    [SerializeField] private int number;
+    
+    public int GetNumber()
+    {
+        return number;
+    }
     
 }
