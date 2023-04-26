@@ -31,11 +31,7 @@ namespace Player
             Ore -= oreAmount;
             Sheep -= sheepAmount;
             return;
-            // if (woodAmount > 0) giveToBank.GiveToBank("Wood(Clone)");
-            // if (wheatAmount > 0) giveToBank.GiveToBank("Wheat(Clone)");
-            // if (clayAmount > 0) giveToBank.GiveToBank("Brick(Clone)");
-            // if (oreAmount > 0) giveToBank.GiveToBank("Ore(Clone)");
-            // if (sheepAmount > 0) giveToBank.GiveToBank("Sheep(Clone)");
+            
         }
 
         public bool HasResources(int woodAmount, int wheatAmount, int clayAmount, int oreAmount, int sheepAmount)

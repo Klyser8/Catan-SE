@@ -43,11 +43,12 @@ public class TradePlayerResources : MonoBehaviour
         // Get the current player from the player manager
         playerTrade = playerManager.GetCurrentPlayer();
         // If the player is null, print an error message
-        if(playerTrade == null) {
-            Debug.Log("Player is null");
-        }
-        // Otherwise, print a message that the player exists
-        Debug.Log("Player exist");
+
+        // if(playerTrade == null) {
+        //     Debug.Log("Player is null");
+        // }
+        // // Otherwise, print a message that the player exists
+        // Debug.Log("Player exist");
     }
     
     // Activate the buttons for the specified types of ports
@@ -86,11 +87,11 @@ public class TradePlayerResources : MonoBehaviour
         // Print a message indicating that the method has been called and the type of resource
         Debug.Log("CountedResources called with Type: " + typeOfResourse);
         // If the player is null, print an error message
-        if(playerTrade == null) {
-            Debug.Log("Player is null");
-        }
+        // if(playerTrade == null) {
+        //     Debug.Log("Player is null");
+        // }
         // Otherwise, print a message that the player exists
-        Debug.Log("Player exist");
+        // Debug.Log("Player exist");
         // Depending on the type of resource, activate the corresponding button
         if (typeOfResourse == "Brick(Clone)") {
             button_brick.interactable = true;
@@ -136,33 +137,44 @@ public class TradePlayerResources : MonoBehaviour
         if (enable) {
             // Get the player's resource handler
             ResourceHandler resHand = playerTrade.GetResourceHandler();
+            bool found = false;
             // Print a message showing the resource index, amount to discard, and whether the trade is enabled
-            Debug.Log(resourceIndex + " " + amountToDiscard + " " + enable);
-            // Print the type of resource to discard
-            Debug.Log(resourseTypeToDiscard);
+            Debug.Log(resourceIndex + " " + amountToDiscard + " " + enable + " " + resourseTypeToDiscard);
             // Loop through the specified number of resources to discard
+            Debug.Log("ENTER FOR LOOP");
             for(int i = 0; i < amountToDiscard; i++) {
                 // Depending on the type of resource to discard, subtract the appropriate resources from the player's hand
                 if (resourseTypeToDiscard == "Brick(Clone)") {
                     resHand.SubtractResources(0, 0, 1, 0, 0);
+                    found = true;
                     Debug.Log(resourseTypeToDiscard + " Discarded");
                 } else if (resourseTypeToDiscard == "Ore(Clone)") {
                     resHand.SubtractResources(0, 0, 0, 1, 0);
-                    Debug.Log(resourseTypeToDiscard);
+                    found = true;
+                    Debug.Log(resourseTypeToDiscard + " Discarded");
                 } else if (resourseTypeToDiscard == "Sheep(Clone)") {
                     resHand.SubtractResources(0, 0, 0, 0, 1);
-                    Debug.Log(resourseTypeToDiscard);
+                    found = true;
+                    Debug.Log(resourseTypeToDiscard + " Discarded");
                 } else if (resourseTypeToDiscard == "Wood(Clone)") {
                     resHand.SubtractResources(1, 0, 0, 0, 0);
-                    Debug.Log(resourseTypeToDiscard);
+                    found = true;
+                    Debug.Log(resourseTypeToDiscard + " Discarded");
                 } else if (resourseTypeToDiscard == "Wheat(Clone)") {
                     resHand.SubtractResources(0, 1, 0, 0, 0);
-                    Debug.Log(resourseTypeToDiscard);
+                    found = true;
+                    Debug.Log(resourseTypeToDiscard + " Discarded");
                 } else {
                     // If the type of resource to discard doesn't match any of the specified types, print an error message
                     Debug.LogError("Invalid resource name");
                 }
+                Debug.Log("Discarded: " + i);
             }
+            if(found) {
+                hand.GiveToBank(amountToDiscard, resourseTypeToDiscard);
+            }
+
+            Debug.Log("EXIT FOR LOOP");
             // Depending on the resource index, add the appropriate resources to the player's hand
             if (resourceIndex == 0) {
                 resHand.AddResources(0, 0, 1, 0, 0);

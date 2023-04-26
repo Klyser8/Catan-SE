@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5752417719477987479}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: 'Number 12 '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -43,7 +43,7 @@ GameObject:
   - component: {fileID: 7073228736737711501}
   - component: {fileID: 7163479975673581082}
   - component: {fileID: 2515232291774625245}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: number pir teens
   m_TagString: Untagged
   m_Icon: {fileID: 0}
