@@ -6,6 +6,7 @@ using UnityEngine;
 [DefaultExecutionOrder(-1)]
 public class PlayerManager : MonoBehaviour
 {
+    private GameManager _gameManager;
     public GameObject playerPrefab; // Assign the player prefab in the editor
     public int playerCount = 4;
     private List<PlayerController> _playerControllers = new();
@@ -21,6 +22,7 @@ public class PlayerManager : MonoBehaviour
     
     void Start()
     {
+        _gameManager = FindObjectOfType<GameManager>();
         // Instantiate the players
         for (var i = 0; i < playerCount; i++)
         {
@@ -32,17 +34,42 @@ public class PlayerManager : MonoBehaviour
         }
     }
     
-    // Method to advance the turn to the next player
-    public void NextTurn()
+    /**
+     * Advances the turn to the next player.
+     * If the end of the round is reached, returns true.
+     * A round is over when the next turn player is the first player.
+     */
+    public bool AdvanceTurn()
     {
-        _currentPlayer++;
-
-        // If we've reached the end of the list, loop back to the beginning
-        if (_currentPlayer >= playerCount)
+        if (_gameManager.GetGameState() == GameState.InitialPlacement)
         {
-            _currentPlayer = 0;
+            if (_gameManager.GetCurrentRound() == -1)
+            {
+                _currentPlayer++;
+                if (_currentPlayer == 3)
+                {
+                    return true;
+                }
+            } else if (_gameManager.GetCurrentRound() == 0)
+            {
+                _currentPlayer--;
+                if (_currentPlayer == 0)
+                {
+                    return true;
+                }
+            }
         }
-        //TODO: Perform any other actions that need to happen at the end of a turn
+        else
+        {
+            _currentPlayer++;
+            // If we've reached the end of the list, loop back to the beginning
+            if (_currentPlayer >= playerCount)
+            {
+                _currentPlayer = 0;
+                return true;
+            }
+        }
+        return false;
     }
     
     /**
