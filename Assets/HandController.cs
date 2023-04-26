@@ -51,18 +51,14 @@ public class HandController : MonoBehaviour
 
     
 
-    public void GiveToBank(string resourceName) {
-        GameObject resourceInHand;
-        int numberToDiscard = 4;
-        int discarded = 0;
-        for(int i = 0; i < hand.transform.childCount; i++) {
-            resourceInHand = hand.transform.GetChild(i).gameObject;
-            if(resourceName == resourceInHand.name) {
-                Destroy(resourceInHand);
-                discarded++;
-                return;
+    public void GiveToBank(int amountToDiscard, string resourceName) {
+        GameObject resourceToDiscard;
+        for(int i = 0; i < amountToDiscard; i++) {
+            resourceToDiscard = hand.transform.GetChild(i).gameObject;
+            if(resourceToDiscard.name == resourceName) {
+                Destroy(resourceToDiscard);
             }
-        } 
+        }
     }
 }
 
