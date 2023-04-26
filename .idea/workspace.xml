@@ -1,81 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="24333dbe-e3a9-4442-8e59-6d338000a108" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/ActiveDevCardManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ActiveDevCardManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ColorManager.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/ColorManager.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GetDevCard.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GetDevCard.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GetResources.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/GetResources.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/HandController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/HandController.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/PrefabHighpoly/Team Colors.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/PrefabHighpoly/Team Colors/OutlineFill 1.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/PrefabHighpoly/Team Colors/OutlineFill 1.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/PrefabHighpoly/Team Colors/OutlineFill 2.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/PrefabHighpoly/Team Colors/OutlineFill 2.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/PrefabHighpoly/Team Colors/OutlineFill 3.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/PrefabHighpoly/Team Colors/OutlineFill 3.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/PrefabHighpoly/Team Colors/OutlineFill.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/PrefabHighpoly/Team Colors/OutlineFill.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/QuickOutline.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/QuickOutline/Readme.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/QuickOutline/Readme.txt.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/QuickOutline/Resources.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/QuickOutline/Resources/Materials.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/QuickOutline/Resources/Materials/OutlineFill.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/QuickOutline/Resources/Materials/OutlineFill.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/QuickOutline/Resources/Materials/OutlineMask.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/QuickOutline/Resources/Materials/OutlineMask.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/QuickOutline/Resources/Shaders.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/QuickOutline/Resources/Shaders/OutlineFill.shader" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/QuickOutline/Resources/Shaders/OutlineFill.shader.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/QuickOutline/Resources/Shaders/OutlineMask.shader" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/QuickOutline/Resources/Shaders/OutlineMask.shader.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/QuickOutline/Samples.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/QuickOutline/Samples/Materials.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/QuickOutline/Samples/Materials/Plane.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/QuickOutline/Samples/Materials/Plane.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/QuickOutline/Scripts.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/QuickOutline/Scripts/Outline.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/QuickOutline/Scripts/Outline.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RoadHandler.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/RoadHandler.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TestResourcesUI.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TestResourcesUI.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TradePlayerResources.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/TradePlayerResources.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Untitled-1 (1) 1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Untitled-1 (1) 1.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Untitled-1 (1) 2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Untitled-1 (1) 2.png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Untitled-1 (1).png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Untitled-1 (1).png.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/VictoryPointsWriter.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/VictoryPointsWriter.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Egor's Experiments/High poly/Points/Plane.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/High poly/Points/Plane.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Egor's Experiments/IgniteCoders/Simple Water Shader/Resources/Water_mat_01.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/IgniteCoders/Simple Water Shader/Resources/Water_mat_01.mat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Egor's Experiments/MyWater.shadergraph" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Egor's Experiments/MyWater.shadergraph" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrefabHighpoly/Buildings/Settelment.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrefabHighpoly/Buildings/Settelment.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrefabHighpoly/Buildings/castle.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrefabHighpoly/Buildings/castle.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrefabHighpoly/Cards/Brick.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrefabHighpoly/Cards/Brick.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrefabHighpoly/Cards/Develop.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrefabHighpoly/Cards/Develop.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrefabHighpoly/Cards/Ore.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrefabHighpoly/Cards/Ore.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrefabHighpoly/Cards/Sheep.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrefabHighpoly/Cards/Sheep.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrefabHighpoly/Cards/Wheat.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrefabHighpoly/Cards/Wheat.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrefabHighpoly/Cards/Wood.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/PrefabHighpoly/Cards/Wood.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Settlement.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Settlement.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/CatanGame.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CatanGame.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/MainMenu.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BuildHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BuildHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/ResourceHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/ResourceHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/UI/Cards/DropZone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/UI/Cards/DropZone.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/EditorUserSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/default-2022.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Catan-SE/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Catan-SE/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,11 +16,15 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="2Oxn0hecNKYWenWcZl5P0FbSICm" />
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true"
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

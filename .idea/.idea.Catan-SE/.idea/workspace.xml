@@ -5,34 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ef5f3453-f043-42a5-a0b3-fbc80bed54bb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Catan-SE/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Catan-SE/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ColorManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/ColorManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/GetResources.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/GetResources.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrefabHighpoly/Team Colors/OutlineFill 1.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrefabHighpoly/Team Colors/OutlineFill 1.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrefabHighpoly/Team Colors/OutlineFill 2.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrefabHighpoly/Team Colors/OutlineFill 2.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrefabHighpoly/Team Colors/OutlineFill 3.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrefabHighpoly/Team Colors/OutlineFill 3.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrefabHighpoly/Team Colors/OutlineFill.mat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/PrefabHighpoly/Team Colors/OutlineFill.mat.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/CatanGame.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/CatanGame.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BoardGenerator.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BoardGenerator.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/BuildHandler.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/BuildHandler.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/CameraController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/CameraController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/DiceController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/DiceController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/GameManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/NumberData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/NumberData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/PlayerManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/TileData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/TileData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/VictoryPointsWriter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/VictoryPointsWriter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/URPProjectSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" beforeDir="false" afterPath="$PROJECT_DIR$/UserSettings/Layouts/CurrentMaximizeLayout.dwlt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player1Material.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player1Material.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player2Material.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player2Material.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player3Material.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player3Material.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player4Material.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Player4Material.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Action/RoadBuilder.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Action/RoadBuilder.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +109,7 @@
       <workItem from="1681740527654" duration="6329000" />
       <workItem from="1681910651864" duration="12581000" />
       <workItem from="1682443004931" duration="2739000" />
-      <workItem from="1682511566856" duration="15768000" />
+      <workItem from="1682511566856" duration="17137000" />
     </task>
     <servers />
   </component>

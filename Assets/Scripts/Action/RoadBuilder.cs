@@ -12,7 +12,7 @@ public class RoadBuilder : MonoBehaviour
     public Transform otherRoadLeftTwo;
     public Transform otherRoadRight;
     public Transform otherRoadRightTwo;
-    
+
     public float checkDistance = 0.1f;
     public float otherRoadDistance = 0.1f;
     public LayerMask buildingMask;
@@ -30,126 +30,61 @@ public class RoadBuilder : MonoBehaviour
 
     public bool canBuild = false;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
         hasRoad = Physics.CheckSphere(checkRoad.position, checkDistance, roadMask);
-        if(!hasRoad) 
+
+        if (!hasRoad)
         {
-            //Vuildings on side
-            if(Physics.CheckSphere(checkBuildingLeft.position, checkDistance, buildingMask)) {
-                if(!playLeft){
-                    playLeft = true;
-                    PlayParticleLeft();
-                    canBuild = true;
-                }
-            } 
+            UpdatePlayState(ref playLeft, 
+            checkBuildingLeft, otherRoadLeft, otherRoadLeftTwo, buildHereLeft);
+            UpdatePlayState(ref playRight, 
+            checkBuildingRight, otherRoadRight, otherRoadRightTwo, buildHereRight);
+            canBuild = playLeft || playRight;
+        }
+        else
+        {
+            SetPlayState(false, ref playLeft, buildHereLeft);
+            SetPlayState(false, ref playRight, buildHereRight);
+            canBuild = false;
+        }
+    }
 
-            if(Physics.CheckSphere(checkBuildingRight.position, checkDistance, buildingMask) ) {
-                if(!playRight){
-                    playRight = true;
-                    PlayParticleRight();
-                    canBuild = true;
-                }
-            }
-
-            //Roads on sides 
-            if(Physics.CheckSphere(otherRoadLeft.position, otherRoadDistance, roadMask)) {
-                hasRoadOnSide = true;
-                if(!playLeft) {
-                    if(!playLeft){
-                        playLeft = true;
-                        PlayParticleLeft();
-                        canBuild = true;
-                    }
-                }
-            }
-            if(Physics.CheckSphere(otherRoadRight.position, otherRoadDistance, roadMask)) {
-                hasRoadOnSide = true;
-                if(!playRight) {
-                    if(!playRight){
-                        playRight = true;
-                        PlayParticleRight();
-                        canBuild = true;
-                    }
-                }
-            }
-
-            if(Physics.CheckSphere(otherRoadLeftTwo.position, otherRoadDistance, roadMask)) {
-                hasRoadOnSide = true;
-                if(!playLeft) {
-                    if(!playLeft){
-                        playLeft = true;
-                        PlayParticleLeft();
-                        canBuild = true;
-                    }
-                }
-            }
-            if(Physics.CheckSphere(otherRoadRightTwo.position, otherRoadDistance, roadMask)) {
-                hasRoadOnSide = true;
-                if(!playRight) {
-                    if(!playRight){
-                        playRight = true;
-                        PlayParticleRight();
-                        canBuild = true;
-                    }
-                }
+    private void UpdatePlayState(ref bool playState, Transform checkBuilding, 
+        Transform otherRoad1, Transform otherRoad2, VisualEffect buildHere)
+    {
+        if (!playState)
+        {
+            if (CanBuildAt(checkBuilding.position, checkDistance, buildingMask) 
+            || CanBuildAt(otherRoad1.position, otherRoadDistance, roadMask) 
+            || CanBuildAt(otherRoad2.position, otherRoadDistance, roadMask))
+            {
+                SetPlayState(true, ref playState, buildHere);
             }
         }
-
-       
-
-        if(hasRoad) {
-            if(playLeft) {
-                playLeft = false;
-                StopParticleLeft();
-                canBuild = false;
-            }
-            if(playRight) {
-                playRight = false;
-                StopParticleRight();
-                canBuild = false;
-            }
-        } 
     }
 
-    // private void OnDrawGizmos() {
-    //     Gizmos.DrawSphere(checkBuildingLeft.position, checkDistance);
-    // }
+    private void SetPlayState(bool state, ref bool playState, VisualEffect buildHere)
+    {
+        playState = state;
+        if (state)
+        {
+            buildHere.Play();
+        }
+        else
+        {
+            buildHere.Stop();
+        }
+    }
 
-    private void OnDrawGizmos() {
+    private bool CanBuildAt(Vector3 position, float distance, LayerMask layerMask)
+    {
+        return Physics.CheckSphere(position, distance, layerMask);
+    }
+
+    private void OnDrawGizmos()
+    {
         Gizmos.DrawSphere(checkBuildingRight.position, checkDistance);
         Gizmos.DrawSphere(otherRoadRight.position, otherRoadDistance);
-        
-    }
-
-    // private void OnDrawGizmos() {
-    //     Gizmos.DrawSphere(checkRoad.position, checkDistance);
-    // }
-
-    void PlayParticleLeft() {
-        Debug.Log("Play Left");
-        buildHereLeft.Play();
-    }
-
-    void StopParticleLeft() {
-        Debug.Log("Stop Left");
-        buildHereLeft.Stop();
-    }
-
-    void PlayParticleRight() {
-        Debug.Log("Play Right");
-        buildHereRight.Play();
-    }
-
-    void StopParticleRight() {
-        Debug.Log("Play Right");
-        buildHereRight.Stop();
     }
 }
