@@ -18,6 +18,9 @@ public class CameraController : MonoBehaviour
     private float _xRotation;
     private float _yRotation;
 
+    /**
+     * 
+     */
     void Start()
     {
         Vector3 angles = transform.eulerAngles;
@@ -25,6 +28,9 @@ public class CameraController : MonoBehaviour
         _yRotation = angles.x;
     }
 
+    /**
+     * Logic for camera movement
+     */
     void Update()
     {
         if (target)
@@ -48,6 +54,9 @@ public class CameraController : MonoBehaviour
         }
     }
 
+    /**
+     * 
+     */
     private float ClampAngle(float angle, float min, float max)
     {
         if (angle < -360.0f)

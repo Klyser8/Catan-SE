@@ -20,6 +20,9 @@ public class GameManager : MonoBehaviour
         Debug.Log("Number of players found: " + _playerManager.GetPlayerCount());
     }
 
+    /**
+     * Main game cycle
+     */
     private void Update()
 {
     switch (_gameState)
