@@ -8,6 +8,7 @@ using TMPro;
 public class VictoryPointsWriter : MonoBehaviour
 {
     private PlayerManager _playerManager;
+    public GameObject[] playersInfo;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,7 @@ public class VictoryPointsWriter : MonoBehaviour
     public void AddScore(int score, int playerIndex)
     {
         _playerManager.GetPlayers()[playerIndex].AddVictoryPoints(score);
+        Debug.Log(_playerManager.GetCurrentPlayer().name + " GET VP");
         UpdateVictoryPointsText();
     }
 
@@ -26,6 +28,7 @@ public class VictoryPointsWriter : MonoBehaviour
         foreach (var player in _playerManager.GetPlayers())
         {
             int victoryPoints = player.GetVictoryPoints();
+            player.GetPlayerPanel().transform.GetChild(2).GetComponentInChildren<TextMeshProUGUI>().text = victoryPoints.ToString(); 
             // Debug.Log("something: " + player.GetComponentInChildren<TextMeshProUGUI>());
             // player.GetComponentInChildren<TextMeshProUGUI>().text = victoryPoints.ToString();
         }

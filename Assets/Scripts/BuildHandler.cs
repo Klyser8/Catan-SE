@@ -21,6 +21,8 @@ public class BuildHandler : MonoBehaviour
     private GameManager _gameManager;
     private RoadHandler _roadHandler;
     private VictoryPointsWriter _vpWriter;
+    private BuildButtons _buildButton;
+    private int _buildingIndex;
     // Start is called before the first frame update
     
     void Start()
@@ -29,6 +31,7 @@ public class BuildHandler : MonoBehaviour
         _gameManager = FindObjectOfType<GameManager>();
         _roadHandler = FindObjectOfType<RoadHandler>();
         _vpWriter = FindObjectOfType<VictoryPointsWriter>();
+        _buildButton = FindObjectOfType<BuildButtons>();
     }
 
     // Update is called once per frame
@@ -38,54 +41,62 @@ public class BuildHandler : MonoBehaviour
         mousePos.z = 10f;
         mousePos = cam.ScreenToWorldPoint(mousePos);
         // Debug.DrawRay(transform.position, mousePos - transform.position, Color.yellow);
+        if(_buildButton.Unblock()) {
+            if (Input.GetMouseButtonDown(0)) {
+                Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+                Debug.Log("1");
+    
+                if(Physics.Raycast(ray, out hit)) {
+                    Debug.Log(hit.collider.gameObject.name);
+                }
 
-        if (Input.GetMouseButtonDown(0)) {
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
-            Debug.Log("1");
+                if(_buildingIndex == 0) {
+                    if (Physics.Raycast(ray, out hit, 100, roadPoint)) 
+                        {
+                            
+                            if(hit.transform.GetComponent<RoadBuilder>().canBuild) 
+                            {
+                                Debug.Log(hit.collider.gameObject.name + " Again");
+                                _roadHandler.BuildRoad(hit.transform.position, hit.transform.rotation);
+                            }
+                        }                
+                }
 
-            if(Physics.Raycast(ray, out hit)) {
-                Debug.Log(hit.collider.gameObject.name);
-            }
-            if (Physics.Raycast(ray, out hit, 100, roadPoint)) 
+                if(_buildingIndex == 1)
                 {
+                    if (Physics.Raycast(ray, out hit, 100, point))
+                    {   
+                        Debug.Log(hit.transform.GetComponent<BuildingPoint>() == null);
+                        if (!hit.transform.GetComponent<BuildingPoint>().hasBuilding) {
+                            Debug.Log("3");
                     
-                    if(hit.transform.GetComponent<RoadBuilder>().canBuild) 
-                    {
-                        Debug.Log(hit.collider.gameObject.name + " Again");
-                        _roadHandler.BuildRoad(hit.transform.position, hit.transform.rotation);
-                    }
+                            // Debug.Log(hit.transform.gameObject.transform.position);
+                            var settlement = TryBuildingSettlement(hit.transform.position);
+                            if (settlement != null)
+                            {
+                                var player = _playerManager.GetCurrentPlayer();
+                                var settlementData = settlementBuildingData;
+                                player.GetResourceHandler().SubtractResources(
+                                    settlementData.woodCost, 
+                                    settlementData.wheatCost, 
+                                    settlementData.clayCost, 
+                                    settlementData.oreCost,
+                                    settlementData.sheepCost);
+                                player.AddSettlement(settlement);
+                                
+                                _vpWriter.AddScore(1, _playerManager.GetCurrentPlayerID()); //TODO replace with current player
+                            }
+                            return;
+                        }
+                    }  
                 }
-
-            if (Physics.Raycast(ray, out hit, 100, point))
-            {   
-                Debug.Log(hit.transform.GetComponent<BuildingPoint>() == null);
-                if (!hit.transform.GetComponent<BuildingPoint>().hasBuilding) {
-                    Debug.Log("3");
-            
-                    // Debug.Log(hit.transform.gameObject.transform.position);
-                    var settlement = TryBuildingSettlement(hit.transform.position);
-                    if (settlement != null)
-                    {
-                        var player = _playerManager.GetCurrentPlayer();
-                        var settlementData = settlementBuildingData;
-                        player.GetResourceHandler().SubtractResources(
-                            settlementData.woodCost, 
-                            settlementData.wheatCost, 
-                            settlementData.clayCost, 
-                            settlementData.oreCost,
-                            settlementData.sheepCost);
-                        player.AddSettlement(settlement);
-                        
-                        _vpWriter.AddScore(1, 1); //TODO replace with current player
-                    }
-                    return;
-                }
-            } 
-            
-            
+            }
         }
-        
+    }
+
+    public void TypeOfBuilding(int buildingIndex) {
+        _buildingIndex = buildingIndex;
     }
 
     /**
@@ -129,6 +140,7 @@ public class BuildHandler : MonoBehaviour
             {
                 Material[] materials = settlementRenderer.materials;
                 materials[1] = player.GetPlayerColor();
+                Debug.Log(player.GetPlayerColor().name);
                 settlementRenderer.materials = materials;
             }
             else

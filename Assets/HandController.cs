@@ -9,10 +9,13 @@ public class HandController : MonoBehaviour
     public TradePlayerResources toTrade;
     public int cardsValue;
     public GetResources getRes;
+    private BuildButtons buildButtons;
 
     private void Update()
     {
         if(hand.transform.childCount != cardsValue) {
+            buildButtons = FindObjectOfType<BuildButtons>();
+            buildButtons.ActivateButtons();
             CountCardsInHand();
             cardsValue = hand.transform.childCount;
         }

@@ -11,6 +11,8 @@ namespace Player
         private ResourceHandler _resourceHandler;
         private ArrayList _buildings = new();
         private ArrayList _roads = new();
+        private GameObject _playerPanel;
+        private int panelIndex;
 
         void Start()
         {
@@ -92,6 +94,15 @@ namespace Player
         public ResourceHandler GetResourceHandler()
         {
             return _resourceHandler;
+        }
+
+        public void SetPlayerPanel(GameObject newPlayerPanel) {
+            _playerPanel = newPlayerPanel;
+        }
+
+        public GameObject GetPlayerPanel()
+        {
+            return _playerPanel;
         }
     }
 }

@@ -84,6 +84,11 @@ public class PlayerManager : MonoBehaviour
 
         return endOfRound;
     }
+
+    public int GetCurrentPlayerID() 
+    {
+        return _currentPlayerId;
+    }
     
     /**
      * Returns a list of all player controllers
