@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.VFX;
 
+/// <summary>
+/// BuildingPoint class handles the logic for checking if a building is present at a specific point
+/// and manages particle effects accordingly.
+/// </summary>
 public class BuildingPoint : MonoBehaviour
 {
     public Transform buildingCheck;
@@ -14,46 +18,64 @@ public class BuildingPoint : MonoBehaviour
     public bool playEffect;
 
     private List<GameObject> _adjacentTiles = new();
-    
-    // Start is called before the first frame update
+
+    /// <summary>
+    /// Initiate Visual Effect and sets boolean playEffect to true
+    /// </summary>
     void Start()
     {
-
         PlayParticles();
         playEffect = true;
-
     }
 
-    // Update is called once per frame
+    /// <summary>
+    /// Checking for buildings around the point. If there is one, Stops Visua; Effect 
+    /// </summary>
     void Update()
     {
-       hasBuilding = Physics.CheckSphere(buildingCheck.position, buildingCheckDistance, buildingMask);
-       
-       if(playEffect) {
-          if(hasBuilding) {
-              playEffect = false;
-              StopParticles(); 
-          } 
-       }
-        
+        hasBuilding = Physics.CheckSphere(buildingCheck.position, buildingCheckDistance, buildingMask);
+
+        if(playEffect)
+        {
+            if(hasBuilding)
+            {
+                playEffect = false;
+                StopParticles();
+            }
+        }
     }
-    
-    public List<GameObject> GetAdjacentTiles() {
-        // Debug.Log(_adjacentTiles.Count);
+
+    /// <summary>
+    /// Returns the list of adjacent tiles.
+    /// </summary>
+    /// <returns>List of adjacent GameObjects</returns>
+    public List<GameObject> GetAdjacentTiles()
+    {
         return _adjacentTiles;
     }
 
-    private void OnDrawGizmos() {
+    /// <summary>
+    /// Draws a sphere at the building check position in the editor.
+    /// </summary>
+    private void OnDrawGizmos()
+    {
         Gizmos.DrawSphere(buildingCheck.position, buildingCheckDistance);
     }
 
-    void PlayParticles() {
+    /// <summary>
+    /// Plays the particle effect.
+    /// </summary>
+    void PlayParticles()
+    {
         _markerEffect.Play();
     }
 
-    void StopParticles() {
+    /// <summary>
+    /// Stops the particle effect.
+    /// </summary>
+    void StopParticles()
+    {
         _markerEffect.Stop();
     }
-    
-    
 }
+

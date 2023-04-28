@@ -5,23 +5,25 @@ using TMPro;
 using UnityEngine.UI;
 using Player;
 
-// Set the default execution order of the script to 2
+/// <summary>
+/// The TradePlayerResources class handles trading resources between the player and the bank.
+/// </summary>
 [DefaultExecutionOrder(2)]
 public class TradePlayerResources : MonoBehaviour
 {
-    // Define buttons for each type of resource
+    [Header("Resource Buttons")]
     public Button button_brick;
     public Button button_ore;
     public Button button_sheep;
     public Button button_wood;
     public Button button_wheat;
     
-    // Get access to the player's hand, resources, and trade controls
+    [Header("Player Components")]
     public HandController hand;
     public GetResources getRes;
     public PlayerController playerTrade;
     
-    // Define buttons for each type of port
+    [Header("Port Buttons")]
     public Button button_brickPort;
     public Button button_orePort;
     public Button button_sheepPort;
@@ -29,60 +31,41 @@ public class TradePlayerResources : MonoBehaviour
     public Button button_wheatPort;
     public Button button_anyPort;
     
-    // Get access to the player's manager
+    [Header("Player Manager")]
     public PlayerManager playerManager;
     
-    // Define an array to hold each port
+    [Header("Port Array")]
     public GameObject[] port;
     
-    // Define a variable to hold the resource type that the player wants to discard
     private string resourseTypeToDiscard;
     
-    // Start is called before the first frame update
-    private void Start() {
-        // Get the current player from the player manager
+    private void Start()
+    {
         playerTrade = playerManager.GetCurrentPlayer();
-        // If the player is null, print an error message
-
-        // if(playerTrade == null) {
-        //     Debug.Log("Player is null");
-        // }
-        // // Otherwise, print a message that the player exists
-        // Debug.Log("Player exist");
     }
     
-    // Activate the buttons for the specified types of ports
-    public void PortTrade(string[] playersPortType) {
-        // Loop through each port
-        for(int i = 0; i < port.Length; i++) {
-            // Loop through each type of port that the player has
-            for(int t = 0; t < playersPortType.Length; t++) {
-                // If the port is one of the types the player has, activate the corresponding button
-                if(port[i].name == playersPortType[t]){
-                    if(port[i].name == "BrickPort") {
-                        button_brickPort.interactable = true;
-                    }
-                    else if(port[i].name == "OrePort") {
-                        button_orePort.interactable = true;
-                    }
-                    else if(port[i].name == "SheepPort") {
-                        button_sheepPort.interactable = true;
-                    }
-                    else if(port[i].name == "WoodPort") {
-                        button_woodPort.interactable = true;
-                    }
-                    else if(port[i].name == "WheatPort") {
-                        button_wheatPort.interactable = true;
-                    }
-                    else if(port[i].name == "AnyPort") {
-                        button_anyPort.interactable = true;
-                    }
+    /// <summary>
+    /// Activate the buttons for the specified types of ports.
+    /// </summary>
+    /// <param name="playersPortType">An array of port types the player has.</param>
+    public void PortTrade(string[] playersPortType)
+    {
+        for(int i = 0; i < port.Length; i++)
+        {
+            for(int t = 0; t < playersPortType.Length; t++)
+            {
+                if(port[i].name == playersPortType[t])
+                {
+                    // Activate the corresponding button based on the port type
                 }
             }   
         }
     }
     
-    // Activate the button for the specified type of resource
+    /// <summary>
+    /// Activate the button for the specified type of resource.
+    /// </summary>
+    /// <param name="typeOfResourse">The type of resource.</param>
     public void CountedResources(string typeOfResourse) {
         // Print a message indicating that the method has been called and the type of resource
         Debug.Log("CountedResources called with Type: " + typeOfResourse);
@@ -125,13 +108,21 @@ public class TradePlayerResources : MonoBehaviour
         }
     }
         
-    // Set the resource type that the player wants to discard
+    /// <summary>
+    /// Set the resource type that the player wants to discard.
+    /// </summary>
+    /// <param name="resourceToGive">The type of resource the player wants to discard.</param>
     public void ResourceToDiscard(string resourceToGive) {
         resourseTypeToDiscard = resourceToGive;
     }
     
     
-    // Take a specified amount of a specified resource from the bank and give it to the player
+    /// <summary>
+    /// Take a specified amount of a specified resource from the bank and give it to the player.
+    /// </summary>
+    /// <param name="resourceIndex">The index of the resource.</param>
+    /// <param name="amountToDiscard">The amount of resources to discard.</param>
+    /// <param name="enable">Whether the trade is enabled.</param>
     public void TakeResourceFromBank(int resourceIndex, int amountToDiscard, bool enable) { 
         // If the trade is enabled
         if (enable) {
