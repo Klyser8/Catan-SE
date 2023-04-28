@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 /// <summary>
-/// This class is responsible for loading a specific scene in a Unity game.
+/// This class is responsible for loading a specific scene in the game.
 /// In this case, it is designed to load the "CatanGame" scene.
 /// </summary>
 public class SceneLoader : MonoBehaviour

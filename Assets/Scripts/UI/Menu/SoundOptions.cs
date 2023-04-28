@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Audio;
 
 /// <summary>
-/// This class is responsible for managing the sound options in a Unity game.
+/// This class is responsible for managing the sound options in the game.
 /// It provides functionality to adjust master volume, music volume, and sound volume.
 /// </summary>
 public class SoundOptions : MonoBehaviour

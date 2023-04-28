@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 /// <summary>
-/// This class is used for managing the main menu of a Unity game.
+/// This class is used for managing the main menu of the game.
 /// It provides functionality to load different scenes and exit the game.
 /// </summary>
 public class MainMenu : MonoBehaviour

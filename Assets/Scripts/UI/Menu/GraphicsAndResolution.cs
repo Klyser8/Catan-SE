@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 
 /// <summary>
-/// This class is used for managing graphics and resolution settings in a Unity game.
+/// This class is used for managing graphics and resolution settings in the game.
 /// It provides functionality to change the game's resolution, quality level, and fullscreen mode.
 /// </summary>
 public class GraphicsAndResolution : MonoBehaviour
