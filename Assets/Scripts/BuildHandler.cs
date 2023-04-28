@@ -5,6 +5,10 @@ using Action;
 using Player;
 using UnityEngine;
 
+/// <summary>
+/// The `BuildHandler` class handles the building of settlements, cities, and roads in the game.
+/// It manages the placement of buildings based on player input and available resources.
+/// </summary>
 public class BuildHandler : MonoBehaviour
 {
     [SerializeField] private Camera cam;
@@ -21,8 +25,10 @@ public class BuildHandler : MonoBehaviour
     private GameManager _gameManager;
     private RoadHandler _roadHandler;
     private VictoryPointsWriter _vpWriter;
-    // Start is called before the first frame update
     
+    /// <summary>
+    /// Initializes references to required components and managers.
+    /// </summary>
     void Start()
     {
         _playerManager = FindObjectOfType<PlayerManager>();
@@ -31,14 +37,20 @@ public class BuildHandler : MonoBehaviour
         _vpWriter = FindObjectOfType<VictoryPointsWriter>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = 10f;
         mousePos = cam.ScreenToWorldPoint(mousePos);
         // Debug.DrawRay(transform.position, mousePos - transform.position, Color.yellow);
+        HandleBoardClick();
+    }
 
+    /// <summary>
+    /// Handles the logic for the click on the game board to build settlements, cities, and roads.
+    /// </summary>
+    private void HandleBoardClick()
+    {
         if (Input.GetMouseButtonDown(0)) {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
@@ -48,14 +60,14 @@ public class BuildHandler : MonoBehaviour
                 Debug.Log(hit.collider.gameObject.name);
             }
             if (Physics.Raycast(ray, out hit, 100, roadPoint)) 
-                {
+            {
                     
-                    if(hit.transform.GetComponent<RoadBuilder>().canBuild) 
-                    {
-                        Debug.Log(hit.collider.gameObject.name + " Again");
-                        _roadHandler.BuildRoad(hit.transform.position, hit.transform.rotation);
-                    }
+                if(hit.transform.GetComponent<RoadBuilder>().canBuild) 
+                {
+                    Debug.Log(hit.collider.gameObject.name + " Again");
+                    _roadHandler.BuildRoad(hit.transform.position, hit.transform.rotation);
                 }
+            }
 
             if (Physics.Raycast(ray, out hit, 100, point))
             {   
@@ -79,20 +91,18 @@ public class BuildHandler : MonoBehaviour
                         
                         _vpWriter.AddScore(1, 1); //TODO replace with current player
                     }
-                    return;
                 }
             } 
-            
-            
         }
-        
     }
 
-    /**
-     * Tries to build a settlement at the given position, for the player who's turn it is.
-     * Returns the settlement if it was built, null otherwise.
-     * The settlement is not built if the player does not have enough resources.
-     */
+    /// <summary>
+    /// Tries to build a settlement at the given position for the player who's turn it is.
+    /// Returns the settlement if it was built, null otherwise.
+    /// The settlement is not built if the player does not have enough resources, hence the method name.
+    /// </summary>
+    /// <param name="position">The position to build the settlement in.</param>
+    /// <returns>The built settlement game object or null.</returns>
     GameObject TryBuildingSettlement (Vector3 position) {
         var player = _playerManager.GetCurrentPlayer();
         ResourceHandler resourceHandler = player.GetResourceHandler();
@@ -107,8 +117,6 @@ public class BuildHandler : MonoBehaviour
             var newBuilding = Instantiate(settlement);
             newBuilding.transform.position = position;
             float randomAngle = Random.Range(0f, 360f);
-            Quaternion randomRotation = Quaternion.Euler(Vector3.up * randomAngle);
-            Quaternion currentRotation = newBuilding.transform.rotation;
 
             SetBuildingColor(newBuilding, _playerManager.GetCurrentPlayer());
             return newBuilding;
@@ -116,7 +124,12 @@ public class BuildHandler : MonoBehaviour
         // return null;
     }
     
-    public void SetBuildingColor(GameObject building, PlayerController player)
+    /// <summary>
+    /// Sets the color of the building based on the player's material.
+    /// </summary>
+    /// <param name="building">The building game object to set the color for.</param>
+    /// <param name="player">The player involved.</param>
+    private void SetBuildingColor(GameObject building, PlayerController player)
     {
         // Find the "Castle" child object
         Transform settelmentChild = building.transform.Find("CatanHouseNew");

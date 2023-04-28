@@ -1,10 +1,9 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using Action;
-using Player;
 using UnityEngine;
 
+/// <summary>
+/// This class manages the overall game state and logic.
+/// It handles the main game cycle, player actions, and game state transitions.
+/// </summary>
 [DefaultExecutionOrder(0)]
 public class GameManager : MonoBehaviour
 {
@@ -20,120 +19,129 @@ public class GameManager : MonoBehaviour
         Debug.Log("Number of players found: " + _playerManager.GetPlayerCount());
     }
 
-    /**
-     * Main game cycle
-     */
+    /// <summary>
+    /// The main game cycle runs in the Update method.
+    /// </summary>
     private void Update()
-{
-    switch (_gameState)
     {
-        case GameState.GameStart:
-            Debug.Log("Game start");
-            SwitchState(GameState.InitialPlacement);
-            break;
-        
-        case GameState.InitialPlacement:
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
+        HandleGameCycle();
+    }
+
+    
+    /// <summary>
+    /// Handles the logic to switch between game states, based on player input and how the game is progressing.
+    /// </summary>
+    private void HandleGameCycle() {
+        switch (_gameState)
+        {
+            case GameState.GameStart:
+                Debug.Log("Game start");
+                SwitchState(GameState.InitialPlacement);
+                break;
+            
+            case GameState.InitialPlacement:
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    if (_playerManager.AdvanceTurn())
+                    {
+                        _roundCounter++;
+                        Debug.Log("Round " + _roundCounter + " is over");
+                    } //TODO refactor this code in a method
+                    Debug.Log("Round " + _roundCounter + ": "+ _playerManager.GetCurrentPlayer() + " is starting their turn");
+                    if (_roundCounter == 1)
+                    {
+                        SwitchState(GameState.WaitingForRoll);
+                    }
+                }
+                break;
+            
+            case GameState.WaitingForRoll:
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    SwitchState(GameState.Rolling);
+                }
+                break;
+            
+            case GameState.Rolling:
+                _diceController.RollDice();
+                Debug.Log(_playerManager.GetCurrentPlayer() + " rolled a " + _diceController.GetLastRoll());
+                if (_diceController.GetLastRoll() != 7)
+                    SwitchState(GameState.HarvestingResources);
+                else
+                    SwitchState(GameState.MovingRobber);
+                break;
+            
+            case GameState.HarvestingResources:
+                Debug.Log("Harvesting resources");
+                //TODO: Harvest resources based on the last roll
+                SwitchState(GameState.WaitingForAction);
+                break;
+            
+            case GameState.MovingRobber:
+                Debug.Log(_playerManager.GetCurrentPlayer() + " is moving the robber");
+                //TODO: Move the robber and steal resources from a player
+                SwitchState(GameState.WaitingForAction);
+                break;
+            
+            case GameState.WaitingForAction:
+                HandleActionInput();
+                break;
+            
+            case GameState.Building:
+                Debug.Log(_playerManager.GetCurrentPlayer() + " is building");
+                SwitchState(GameState.WaitingForAction);
+                break;
+            
+            case GameState.Trading:
+                Debug.Log(_playerManager.GetCurrentPlayer() + " is trading");
+                SwitchState(GameState.WaitingForAction);
+                break;
+            
+            case GameState.BuyingDevelopmentCard:
+                Debug.Log(_playerManager.GetCurrentPlayer() + " is buying a development card");
+                SwitchState(GameState.WaitingForAction);
+                break;
+            
+            case GameState.PlayingDevelopmentCard:
+                Debug.Log(_playerManager.GetCurrentPlayer() + " is playing a development card");
+                SwitchState(GameState.WaitingForAction);
+                break;
+    
+            case GameState.EndTurn:
+                Debug.Log(_playerManager.GetCurrentPlayer() + " is ending their turn");
+                if (_playerManager.GetCurrentPlayer().GetVictoryPoints() >= 10)
+                {
+                    Debug.Log(_playerManager.GetCurrentPlayer() + " has won the game!");
+                    SwitchState(GameState.EndGame);
+                }
                 if (_playerManager.AdvanceTurn())
                 {
                     _roundCounter++;
                     Debug.Log("Round " + _roundCounter + " is over");
-                } //TODO refactor this code in a method
+                }
                 Debug.Log("Round " + _roundCounter + ": "+ _playerManager.GetCurrentPlayer() + " is starting their turn");
-                if (_roundCounter == 1)
+                if (_roundCounter > 0)
                 {
                     SwitchState(GameState.WaitingForRoll);
                 }
-            }
-            break;
-        
-        case GameState.WaitingForRoll:
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                SwitchState(GameState.Rolling);
-            }
-            break;
-        
-        case GameState.Rolling:
-            _diceController.RollDice();
-            Debug.Log(_playerManager.GetCurrentPlayer() + " rolled a " + _diceController.GetLastRoll());
-            if (_diceController.GetLastRoll() != 7)
-                SwitchState(GameState.HarvestingResources);
-            else
-                SwitchState(GameState.MovingRobber);
-            break;
-        
-        case GameState.HarvestingResources:
-            Debug.Log("Harvesting resources");
-            //TODO: Harvest resources based on the last roll
-            SwitchState(GameState.WaitingForAction);
-            break;
-        
-        case GameState.MovingRobber:
-            Debug.Log(_playerManager.GetCurrentPlayer() + " is moving the robber");
-            //TODO: Move the robber and steal resources from a player
-            SwitchState(GameState.WaitingForAction);
-            break;
-        
-        case GameState.WaitingForAction:
-            HandleActionInput();
-            break;
-        
-        case GameState.Building:
-            Debug.Log(_playerManager.GetCurrentPlayer() + " is building");
-            SwitchState(GameState.WaitingForAction);
-            break;
-        
-        case GameState.Trading:
-            Debug.Log(_playerManager.GetCurrentPlayer() + " is trading");
-            SwitchState(GameState.WaitingForAction);
-            break;
-        
-        case GameState.BuyingDevelopmentCard:
-            Debug.Log(_playerManager.GetCurrentPlayer() + " is buying a development card");
-            SwitchState(GameState.WaitingForAction);
-            break;
-        
-        case GameState.PlayingDevelopmentCard:
-            Debug.Log(_playerManager.GetCurrentPlayer() + " is playing a development card");
-            SwitchState(GameState.WaitingForAction);
-            break;
-
-        case GameState.EndTurn:
-            Debug.Log(_playerManager.GetCurrentPlayer() + " is ending their turn");
-            if (_playerManager.GetCurrentPlayer().GetVictoryPoints() >= 10)
-            {
-                Debug.Log(_playerManager.GetCurrentPlayer() + " has won the game!");
-                SwitchState(GameState.EndGame);
-            }
-            if (_playerManager.AdvanceTurn())
-            {
-                _roundCounter++;
-                Debug.Log("Round " + _roundCounter + " is over");
-            }
-            Debug.Log("Round " + _roundCounter + ": "+ _playerManager.GetCurrentPlayer() + " is starting their turn");
-            if (_roundCounter > 0)
-            {
-                SwitchState(GameState.WaitingForRoll);
-            }
-            else
-            {
-                SwitchState(GameState.InitialPlacement);
-            }
-
-            break;
-        
-        case GameState.EndGame:
-            Debug.Log("Game over");
-            break;
+                else
+                {
+                    SwitchState(GameState.InitialPlacement);
+                }
+    
+                break;
+            
+            case GameState.EndGame:
+                Debug.Log("Game over");
+                break;
+        }
     }
-}
 
-    /**
-     * Switches the game state to the a new state.
-     * Mostly used for debugging purposes.
-     */
+    /// <summary>
+    /// Switches the game state to a new state.
+    /// </summary>
+    /// <param name="newState">The new state to switch to.</param>
+    /// <returns>True if the state was successfully switched; false otherwise.</returns>
     private bool SwitchState(GameState newState)
     {
         if (_gameState != newState)
@@ -146,10 +154,10 @@ public class GameManager : MonoBehaviour
         return false;
     }
 
-    /**
-     * Handles the input for the player's actions.
-     * This should be replaced with input from the UI.
-     */
+    /// <summary>
+    /// Handles the input for the player's actions.
+    /// This should be replaced with input from the UI.
+    /// </summary>
     private void HandleActionInput()
     {
         if (Input.GetKeyDown(KeyCode.Space))
@@ -170,12 +178,12 @@ public class GameManager : MonoBehaviour
         }
     }
     
-    /**
-     * Provides the players with the resources found near their settlements and cities.
-     * This method should be called when the dice are rolled and the number rolled is not 7.
-     * It should also be called at the start of the game,
-     * when the players are given their initial resources from the second settlements they placed.
-     */
+    /// <summary>
+    /// Provides the players with the resources found near their settlements and cities.
+    /// This method should be called when the dice are rolled and the number rolled is not 7.
+    /// It should also be called at the start of the game,
+    /// when the players are given their initial resources from the second settlements they placed.
+    /// </summary>
     public void CollectResources()
     {
         foreach (var player in _playerManager.GetPlayers())
@@ -187,11 +195,19 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Returns the current round counter.
+    /// </summary>
+    /// <returns>The current round counter.</returns>
     public int GetCurrentRound()
     {
         return _roundCounter;
     }
     
+    /// <summary>
+    /// Returns the current game state.
+    /// </summary>
+    /// <returns>The current game state.</returns>
     public GameState GetGameState()
     {
         return _gameState;
@@ -199,9 +215,9 @@ public class GameManager : MonoBehaviour
     
 }
 
-/**
- * The TurnState enum is used to keep track of the current state of the game.
- */
+/// <summary>
+/// The `GameState` enum is used to keep track of the current state of the game.
+/// </summary>
 public enum GameState {
     GameStart,              // The game is starting.
     InitialPlacement,       // The players are placing their initial settlements and roads.

@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-using UnityEngine.Serialization;
 
+/// <summary>
+/// The `BoardGenerator` class generates the game board with tiles and number tokens.
+/// It populates the board with different types of tiles and assigns random numbers to them.
+/// The class also handles the assignment of adjacent tiles to building points on the board.
+/// </summary>
 public class BoardGenerator : MonoBehaviour
 {
 
@@ -48,12 +51,12 @@ public class BoardGenerator : MonoBehaviour
         AssignAdjacentTilesToBuildingPoints();
     }
 
-    /**
-     * Populates the game board with tiles and their corresponding number tokens.
-     * The method creates each type of tile (forest, hay, field, clay, ore, and desert)
-     * based on the specified quantities and assigns random numbers to the tiles (excluding the desert tile).
-     * The created tiles and their positions are stored in _tileDictionary.
-     */
+    /// <summary>
+    /// Populates the game board with tiles and their corresponding number tokens.
+    /// The method creates each type of tile based on the specified quantities and
+    /// assigns random numbers to the tiles (excluding the desert tile).
+    /// The created tiles and their positions are stored in the tile dictionary.
+    /// </summary>
     private void PopulateBoard()
     {
 
@@ -98,27 +101,24 @@ public class BoardGenerator : MonoBehaviour
         }
     }
 
-    /**
-     * Creates a new tile of the specified type and assigns it to the given position.
-     *
-     * @param tileType The type of tile to create (forest, hay, field, clay, ore, or desert).
-     * @param The position where the tile will be placed.
-     * @return A new GameObject instance of the created tile.
-     */
-    GameObject CreateTile(GameObject tileType, Vector3 position)
+    /// <summary>
+    /// Creates a new tile of the specified type and assigns it to the given position.
+    /// </summary>
+    /// <param name="tileType">The type of tile to create.</param>
+    /// <param name="position">The position where the tile will be placed.</param>
+    /// <returns>A new GameObject instance of the created tile.</returns>
+    private GameObject CreateTile(GameObject tileType, Vector3 position)
     {
         var newTile = Instantiate(tileType);
         newTile.transform.position = position; //Move the cloned tile to the position picked
         return newTile;
     }
     
-    /**
-     * Assigns adjacent tiles to each building point on the game board.
-     * A tile is considered adjacent if its distance to the building point is less than or equal to the adjacencyThreshold.
-     *
-     * @param adjacencyThreshold The maximum distance between a building point and a
-     *                           tile for them to be considered adjacent (default value is 0.6f).
-     */
+    /// <summary>
+    /// Assigns adjacent tiles to each building point on the game board.
+    /// A tile is considered adjacent if its distance to the building point is less than or equal to the adjacencyThreshold.
+    /// </summary>
+    /// <param name="adjacencyThreshold">The maximum distance between a building point and a tile for them to be considered adjacent.</param>
     private void AssignAdjacentTilesToBuildingPoints(float adjacencyThreshold = 0.6f)
     {
         for (int i = 0; i < buildingPointsHolder.childCount; i++)
@@ -134,11 +134,18 @@ public class BoardGenerator : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Gets the tile dictionary containing the positions and GameObjects of the generated tiles.
+    /// </summary>
+    /// <returns>The tile dictionary.</returns>
     public Dictionary<Vector3, GameObject> GetTileDictionary()
     {
         return _tileDictionary;
     }
 
+    /// <summary>
+    /// Data class that holds information about a tile prefab and the number of times it should be created.
+    /// </summary>
     [System.Serializable]
     private class TilePrefabData
     {
@@ -146,6 +153,9 @@ public class BoardGenerator : MonoBehaviour
         public int count;
     }
 
+    /// <summary>
+    /// Data class that holds information about a number token prefab and the number of times it should be created.
+    /// </summary>
     [System.Serializable]
     private class NumberPrefabData
     {

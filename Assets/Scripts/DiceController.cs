@@ -1,6 +1,10 @@
 using System.Collections;
 using UnityEngine;
 
+/// <summary>
+/// The `DiceController` class handles the rolling of dice in the game.
+/// It provides methods to roll the dice and retrieve the previous result.
+/// </summary>
 public class DiceController : MonoBehaviour
 {
     [SerializeField] private GameObject diePrefab;
@@ -12,6 +16,9 @@ public class DiceController : MonoBehaviour
     private bool _rolling;
     private int _lastRoll;
 
+    /// <summary>
+    /// Rolls the dice by instantiating and simulating the physics of two dice objects.
+    /// </summary>
     public void RollDice()
     {
         if (_rolling) return;
@@ -29,6 +36,9 @@ public class DiceController : MonoBehaviour
         StartCoroutine(WaitForDiceRoll());
     }
 
+    /// <summary>
+    /// Waits for the dice to finish rolling and calculates the result.
+    /// </summary>
     private IEnumerator WaitForDiceRoll()
     {
         yield return new WaitForSeconds(1f);
@@ -48,6 +58,12 @@ public class DiceController : MonoBehaviour
         _lastRoll = die1Value + die2Value;
     }
 
+    /// <summary>
+    /// Retrieves the value of the rolled die based on the face orientation.
+    /// The side of the die facing upwards is the value rolled.
+    /// </summary>
+    /// <param name="die">The die game object to determine the value of.</param>
+    /// <returns>The number rolled from the die.</returns>
     private int GetDieValue(GameObject die)
     {
         float highestDot = -Mathf.Infinity;
@@ -64,10 +80,13 @@ public class DiceController : MonoBehaviour
                 value = i;
             }
         }
-
         return value;
     }
     
+    /// <summary>
+    /// Retrieves the value of the last roll of the dice.
+    /// </summary>
+    /// <returns>The value of the last roll.</returns>
     public int GetLastRoll()
     {
         return _lastRoll;
