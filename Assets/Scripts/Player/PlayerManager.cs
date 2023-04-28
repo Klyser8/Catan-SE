@@ -2,8 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using Player;
 using UnityEngine;
-using UnityEngine.Serialization;
 
+/// <summary>
+/// The `PlayerManager` class manages the players in the game.
+/// It provides access to player-related information and actions.
+/// This script is NOT used to store player data, but rather to manage the players in the game in a more general manner.
+/// </summary>
 [DefaultExecutionOrder(-1)]
 public class PlayerManager : MonoBehaviour
 {
@@ -23,10 +27,20 @@ public class PlayerManager : MonoBehaviour
         new Vector3(0, 1, 3),
     };
     
+    /// <summary>
+    /// Initializes the game manager and players.
+    /// </summary>
     void Start()
     {
         _gameManager = FindObjectOfType<GameManager>();
-        // Instantiate the players
+        InitializePlayers();
+    }
+
+    /// <summary>
+    /// Initializes the players in the game.
+    /// </summary>
+    private void InitializePlayers()
+    {
         for (var i = 0; i < playerCount; i++)
         {
             var player = Instantiate(playerPrefab, (Vector3) _playerPositions[i], Quaternion.identity);
@@ -38,11 +52,12 @@ public class PlayerManager : MonoBehaviour
         }
     }
     
-    /**
-     * Advances the turn to the next player.
-     * If the end of the round is reached, returns true.
-     * A round is over when the next turn player is the first player.
-     */
+    /// <summary>
+    /// Advances the turn to the next player in the game.
+    /// If the game is in the initial placement phase, it advances the turn in a specific order.
+    /// Otherwise, it advances normally.
+    /// </summary>
+    /// <returns>A boolean indicating if the current round has ended or not.</returns>
     public bool AdvanceTurn()
     {
         bool endOfRound = false;
@@ -90,19 +105,28 @@ public class PlayerManager : MonoBehaviour
         return _currentPlayerId;
     }
     
-    /**
-     * Returns a list of all player controllers
-     */
+    /// <summary>
+    /// Returns a list of all player controllers.
+    /// </summary>
+    /// <returns>A list of player controllers.</returns>
     public List<PlayerController> GetPlayers()
     {
         return _playerControllers;
     }
     
+    /// <summary>
+    /// Returns the player controller of the player who's turn it is.
+    /// </summary>
+    /// <returns>The player controller of the current player.</returns>
     public PlayerController GetCurrentPlayer() 
     {
         return _playerControllers[_currentPlayerId];
     }
     
+    /// <summary>
+    /// Returns the number of players in the game.
+    /// </summary>
+    /// <returns>The number of players in the game.</returns>
     public int GetPlayerCount()
     {
         return playerCount;
